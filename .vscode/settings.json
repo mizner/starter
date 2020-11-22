@@ -1,0 +1,161 @@
+{
+    /**
+    * VS Code General
+    */
+    "window.title": "Outset - ${dirty}${activeEditorShort}${separator}${rootName}${separator}${appName}",
+    "files.associations": {},
+    "files.exclude": {
+        "starter-files": false,
+        "**/*.lock": false,
+        "wp-content/themes/look/dist": false,
+    },
+    "editor.tabCompletion": "on", // Enable Snippets
+    "editor.formatOnSaveTimeout": 2000,
+    "[php]": {
+        // "editor.formatOnSave": true,
+    },
+    "[json]": {
+        "editor.formatOnSave": true,
+    },
+    "scss.validate": false, // Because of supporting tailwind
+    "[twig]": {
+        // "editor.formatOnSave": true,
+        "editor.snippetSuggestions": "top",
+    },
+    "emmet.showSuggestionsAsSnippets": true,
+    /**
+    * Composer - https://marketplace.visualstudio.com/items?itemName=ikappas.composer
+    */
+    "composer.executablePath": "/usr/local/bin/composer",
+    /**
+    * PHP Sniffer & Beautifier - https://marketplace.visualstudio.com/items?itemName=ValeryanM.vscode-phpsab
+    */
+    "phpsab.standard": "./phpcs.xml",
+    "phpsab.snifferMode": "onType",
+    "phpsab.snifferTypeDelay": 400,
+    "phpsab.snifferShowSources": true,
+    "phpsab.executablePathCS": "vendor/bin/phpcs",
+    "phpsab.executablePathCBF": "vendor/bin/phpcbf",
+    "phpsab.fixerEnable": true,
+    /**
+    * PHPCS - https://marketplace.visualstudio.com/items?itemName=ikappas.phpcs
+    */
+    "phpcs.standard": "./phpcs.xml",
+    /**
+    * Search Node modules vscode - https://marketplace.visualstudio.com/items?itemName=jasonnutter.search-node-modules
+    */
+    "search-node-modules.path": "./wp-content/themes/look/node_modules",
+    /**
+    * Code Actions on Save
+    */
+    "editor.codeActionsOnSave": {
+        "source.fixAll.eslint": true,
+        "source.fixAll.stylelint": true
+    },
+    /**
+    * ESLint
+    */
+    "eslint.options": {
+        "configFile": "./.eslintrc"
+    },
+    "eslint.workingDirectories": [
+        "./wp-content/themes/look",
+        "./wp-content/plugins/do",
+    ],
+    /**
+    * Spelling
+    */
+    "cSpell.ignoreWords": [
+        "autoloader",
+        "enqueues",
+        "gulpif",
+        "kses",
+        "phpcbf",
+        "phpcs",
+        "post",
+        "pyxl",
+        "simple",
+        "stylelint",
+        "trailingslashit",
+        "wp"
+    ],
+    "cSpell.words": [
+        "acf",
+        "ajaxurl",
+        "alignfull",
+        "alignwide",
+        "always",
+        "always multiline",
+        "animejs",
+        "antialiased",
+        "autoescape",
+        "autoplace",
+        "before",
+        "bloginfo",
+        "browserslist",
+        "camelcase",
+        "codesniffer",
+        "color",
+        "db",
+        "deliciousbrains",
+        "deliciousbrains plugin wp migrate db pro",
+        "flickity",
+        "fontawesome",
+        "fortawesome",
+        "fslightbox",
+        "full",
+        "fullhuman",
+        "function",
+        "get",
+        "hubspot",
+        "imsanity",
+        "linkedin",
+        "lozad",
+        "metaboxes",
+        "migrate",
+        "mizner",
+        "multiline",
+        "muplugin",
+        "mypage",
+        "mytheme",
+        "paren",
+        "phpdotenv",
+        "pkgd",
+        "plugin",
+        "preact",
+        "pristinejs",
+        "pro",
+        "purgecss",
+        "readonly",
+        "rellax",
+        "scrolldir",
+        "smoothscroll",
+        "space",
+        "space before function paren",
+        "squiz",
+        "squizlabs",
+        "subpack",
+        "subpackage",
+        "svgs",
+        "swatches",
+        "swup",
+        "tailwindcss",
+        "toastify",
+        "trackbacks",
+        "type",
+        "type wordpress muplugin",
+        "vlucas",
+        "vlucas phpdotenv",
+        "woff",
+        "woocommerce",
+        "wordpress",
+        "wp",
+        "wpackagist",
+        "wpackagist plugin acf color swatches",
+        "wpackagist plugin imsanity",
+        "wpcs",
+        "wpinc",
+        "youtube"
+    ],
+    "intelephense.format.enable": false
+}

@@ -1,0 +1,23 @@
+<section class="map-info-window">
+	<h3 class="map-info-window__headline text-md md:text-lg mr-6">{{ heading|e }}</h3>
+	<p class="map-info-window__address mb-0">{{ address_1|e }}</p>
+	<p class="map-info-window__address mb-4">{{ address_2|e }}</p>
+	<ul class="map-info-window__hours mb-6">
+		{% for time in hours %}
+			<li class="map-time leading-relaxed">
+				<span class="map-time__hours text-sm">{{ time.hours_item|e }}</span>
+			</li>
+		{% endfor %}
+	</ul>
+	<div class="gallery flex">
+		{% for item in images %}
+				<a class="{{ loop.index > 4 ? 'hidden' }} {{ loop.index == 4 ? 'more' }} relative mr-4" data-image-index="{{ loop.index }}" data-fslightbox="main-gallery" data-type="image" href='{{ item.src }}'>
+                    {% if loop.index == 4 %}
+                        <span class="gallery__preview-overlay absolute top-0 right-0 left-0 bottom-0 text-light font-semibold flex justify-center items-center">{{ loop.length - loop.index }} More</span>
+                    {% endif %}
+
+					<img class="gallery__image" srcset='{{ item.srcset|e }}' src='{{ item.preview|e }}' alt="{{ item.alt|e }}">
+				</a>
+		{% endfor %}
+	</div>
+</section>

@@ -1,0 +1,125 @@
+{
+    "Dumb var dump": {
+        "prefix": "ddump",
+        "body": [
+            "echo '<pre>';\nvar_dump($1);\necho '</pre>';\ndie();",
+            "$2"
+        ],
+        "description": "var_dump"
+    },
+    "Varible Dump": {
+        "prefix": "var",
+        "body": [
+            "var_dump( $0 ); \ndie;",
+        ],
+        "description": "var_dump"
+    },
+    "Field Heading": {
+        "prefix": "fhead",
+        "body": [
+            "field\\heading(),"
+        ],
+        "description": "ACF heading field"
+    },
+    "Field Content": {
+        "prefix": "fcont",
+        "body": [
+            "field\\text(",
+            "    [",
+            "'label' => __( '$1', 'core' ),",
+            "'slug'  => '$2',",
+            "        'type' => 'textarea',",
+            "    ],",
+            "),"
+        ],
+        "description": "ACF content field"
+    },
+    "Field Link": {
+        "prefix": "flink",
+        "body": [
+            "field\\link(),"
+        ],
+        "description": "ACF link field"
+    },
+    "Field Image": {
+        "prefix": "fimg",
+        "body": [
+            "field\\image(),"
+        ],
+        "description": "ACF image field"
+    },
+    "Field Posts": {
+        "prefix": "fposts",
+        "body": [
+            "field\\post_object(",
+            "    [",
+            "    'label'             => __( '$1', 'core' ),",
+            "    'slug'              => '$2',",
+            "    'post_type'         => '$3',",
+            "    ]",
+            "),"
+        ],
+        "description": "ACF Posts field"
+    },
+    "Field Post Type": {
+        "prefix": "fpt",
+        "body": [
+            "field\\post_type(",
+            "    [",
+            "        'post_types' => [ 'post', '$1' ],",
+            "    ]",
+            "),"
+        ],
+        "description": "ACF Post Type field"
+    },
+    "Conditional Logic": {
+        "prefix": "cond",
+        "body": [
+            "'conditional_logic' => field\\basic_condition( 'fields\\ $1', '$2' ),"
+        ],
+        "description": "ACF conditional logic"
+    },
+    "Field Label and Slug": {
+        "prefix": "flab",
+        "body": [
+            "'label' => __( '$1', 'core' ),",
+            "'slug'  => '$2',"
+        ],
+        "description": "ACF heading field"
+    },
+    "General Field": {
+        "prefix": "fld",
+        "body": [
+            "field$1(),"
+        ],
+        "description": "ACF field"
+    },
+    "Tab Field": {
+        "prefix": "tabgen",
+        "body": [
+            "field\\tab_general(),"
+        ],
+        "description": "ACF field"
+    },
+    "Advanced Tab Field": {
+        "prefix": "tabadv",
+        "body": [
+            "field\\tab_advanced(),"
+        ],
+        "description": "ACF field"
+    },
+    "Repeater Field": {
+        "prefix": "frep",
+        "body": [
+            "field\\repeater(",
+            "    [",
+            "        'label'        => __( 'Items', 'core' ),",
+            "        'slug'         => 'items',",
+            "        'button_label' => __( 'Add Item', 'core' ),",
+            "        'sub_fields'   => [],",
+            "    ]",
+            "),"
+        ],
+        "description": "ACF field"
+    }
+}

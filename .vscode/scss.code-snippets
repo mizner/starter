@@ -1,0 +1,7 @@
+{
+	"Tailwind Apply": {
+		"prefix": "@a",
+		"body": "@apply $0;",
+		"description": "Create @apply rule"
+	}
+}

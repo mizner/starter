@@ -1,0 +1,57 @@
+## Globally Ignored
+.DS_Store
+node_modules
+yarn-error.log
+npm-debug.log
+debug.log
+phpcs.log
+
+## Root Files / Folders
+/.idea
+/.env
+/vendor
+
+
+## Flywheel specific files
+/fw-status-check.php
+/fw-flush-cache.php
+
+## WordPress
+/core
+/wp-config.php
+/wp-activate.php
+/wp-cron.php
+/wp-config-sample.php
+/wp-comments-post.php
+/index.php
+/wp-load.php
+/wp-links-opml.php
+/wp-login.php
+/license.txt
+/wp-settings.php
+/wp-blog-header.php
+/wp-mail.php
+/xmlrpc.php
+/wp-signup.php
+/wp-trackback.php
+/readme.html
+/wp-includes
+/wp-admin
+/wp-content/db.php
+/wp-content/uploads/*
+/wp-content/mu-plugins/*
+/wp-content/plugins/*
+/wp-content/themes/*
+/wp-content/upgrade/*
+
+## Flywheel specific files
+/fw-status-check.php
+/fw-flush-cache.php
+
+## WP CLI
+wp-cli.local.php
+wp-cli.local.yml
+
+## Exceptions (Generally, our custom work)
+!/wp-content/themes/look
+!/wp-content/plugins/do

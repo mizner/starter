@@ -1,0 +1,47 @@
+.slider {
+  &__link {
+    bottom: 3.5rem;
+  }
+
+  .flickity-button {
+    @apply text-light bg-transparent p-0;
+    height: 74px;
+    width: 74px;
+
+    &:hover,
+    &:focus {
+      @apply bg-dark;
+    }
+
+    svg {
+      @apply fill-current;
+    }
+
+    &.next {
+      @screen lg {
+        right: 5rem;
+      }
+    }
+
+    &.previous {
+      @screen lg {
+        left: 5rem;
+      }
+    }
+  }
+
+  .flickity-page-dots {
+    @apply bottom-0 pb-5;
+
+    .dot {
+      background: white;
+      height: 8px;
+      width: 8px;
+      @apply bg-opacity-25;
+    }
+
+    .is-selected {
+      @apply opacity-100;
+    }
+  }
+}

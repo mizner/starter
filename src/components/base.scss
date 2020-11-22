@@ -1,0 +1,330 @@
+/**
+ * Base Elements
+ */
+html {
+  font-size: 16px;
+  // having to force this due to using negative margins for custom block widths
+  // @see https://codepen.io/tigt/post/bust-elements-out-of-containers-with-one-line-of-css
+  overflow-x: hidden;
+}
+
+body {
+  @apply text-dark text-base font-base m-0 antialiased;
+
+  &[data-scroll-enabled='false'] {
+    @apply overflow-hidden;
+  }
+
+  .overlay {
+    // @apply hidden;
+    transform: translate(-100%);
+    transition: transform 1s, opacity 0.5s;
+  }
+
+  &.overlay-active .overlay {
+    @apply top-0 bottom-0 left-0 right-0 opacity-50;
+    transform: translate(0%);
+    transition: transform 0s, opacity 0.5s;
+  }
+
+}
+
+
+
+
+main {
+  //
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  @apply leading-none my-1 font-bold tracking-tight;
+}
+
+h1 {
+  @apply text-3xl mt-0;
+}
+
+h2 {
+  @apply text-2xl;
+}
+
+h3 {
+  @apply text-1xl;
+}
+
+h4 {
+  @apply text-lg;
+}
+
+h5 {
+  @apply text-md;
+}
+
+h6 {
+  @apply text-base;
+}
+
+small {
+  @apply text-sm;
+}
+
+p {
+  @apply text-base font-base mt-2 mb-8;
+}
+
+a {
+  @apply text-primary font-semibold;
+
+  &:focus,
+  &:hover {
+    @apply text-primary;
+  }
+}
+
+ul {
+  li {
+    @apply pl-1;
+  }
+}
+
+ol {
+  li {
+    @apply pl-1;
+  }
+}
+
+
+blockquote {
+  @apply relative;
+}
+
+cite {
+  // coming soon
+}
+
+
+hr {
+  // coming soon
+}
+
+figure {
+  @apply m-0;
+}
+
+img,
+picture {
+  @apply h-auto max-w-full block;
+}
+
+table,
+th,
+td {
+  // coming soon
+}
+
+th,
+td {
+  @apply py-1 px-2;
+}
+
+table {
+  @apply border-collapse;
+}
+
+caption {
+  @apply leading-loose;
+}
+
+th {
+  // coming soon
+}
+
+td {
+  @apply h-4 align-bottom;
+}
+
+form {
+  @apply mb-0;
+}
+
+label {
+  @apply text-sm;
+}
+
+.input-wrapper {
+  @apply border-2 border-primary bg-light mb-2 mr-4 inline-block text-base;
+  transform: skewX(-10deg);
+
+  input {
+    transform: skewX(10deg);
+  }
+}
+
+select,
+input,
+textarea {
+  @apply py-4 px-8 bg-transparent text-dark no-underline transition ease-in duration-200 inline-block text-base font-normal;
+
+  &::placeholder {
+    @apply text-dark;
+  }
+
+  &:focus {
+    // coming soon
+  }
+}
+
+input:focus {
+  @apply outline-none;
+}
+
+input[type='submit'],
+input[type='reset'],
+input[type='button'],
+button,
+.button,
+.woocommerce-cart .wc-proceed-to-checkout a.checkout-button,
+.btn {
+  @apply py-4 px-8 bg-primary font-bold text-dark no-underline transition ease-in duration-200 inline-block mb-2 border-2 border-primary text-base;
+  transform: skewX(-10deg);
+
+  span {
+    @apply inline-block;
+    transform: skewX(10deg);
+  }
+
+  svg {
+    @apply fill-current;
+  }
+
+  &:disabled {
+    @apply opacity-50;
+  }
+
+  &:hover,
+  &:focus {
+    @apply bg-dark text-light outline-none border-dark;
+  }
+}
+
+.btn-secondary {
+  @apply border-light;
+
+  &:hover,
+  &:focus {
+    @apply bg-dark text-light ;
+  }
+}
+
+.btn-tertiary {
+  @apply border-primary bg-transparent text-primary;
+}
+
+
+textarea {
+  // coming soon
+  &:focus {
+    // coming soon
+  }
+}
+
+label {
+  // coming soon
+}
+
+iframe {
+  @apply max-w-full;
+}
+
+select {
+  // coming soon
+}
+
+::selection {
+  // coming soon
+}
+
+/**
+ * Some key selectors
+ */
+
+.wrapper {
+  @apply relative;
+}
+
+.icon {
+  @apply inline-block relative;
+
+  svg {
+    @apply h-full w-full;
+  }
+}
+
+.content {
+  @apply m-auto max-w-xl;
+}
+
+
+.ax-center {
+  right: 50%;
+  transform: translateX(50%);
+}
+
+.ay-center {
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+
+.active-hover {
+  &__item {
+    @apply bg-light pb-12;
+    border: 1px solid;
+    box-shadow: -1em 0 2em 1em rgba(0, 0, 0, 0);
+    transition: all 0.1s;
+
+    &:not(.active) {
+      @apply border-gray-200;
+      @screen xl {
+        @apply pb-4;
+      }
+    }
+
+
+    &.active {
+      @apply border-transparent z-20;
+      box-shadow: 0 0 3em 1em rgba(0, 0, 0, 0.1);
+      margin: -0.1em -0.2em;
+      transform: scale(1.008);
+      transition-duration: 0.5s;
+      @screen xl {
+        margin: -1rem -0.2rem;
+        padding-bottom: 2rem;
+        padding-top: 2.5rem;
+      }
+    }
+  }
+}
+
+
+.logged-in {
+  .nav-mobile {
+    top: 46px;
+    @screen md {
+      top: 32px;
+    }
+  }
+
+  &.home {
+    .header {
+      @screen md {
+        top: 64px;
+      }
+    }
+  }
+}

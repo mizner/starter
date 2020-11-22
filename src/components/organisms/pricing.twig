@@ -1,0 +1,11 @@
+{{ add_script('active-hover') }}
+<section class="pricing-table bg-light mb-20">
+    <div class="container">
+        <h2 class="italic text-center mb-20 mt-20 text-1xl md:text-2xl">{{ __('Find the right plan', 'look') }}</h2>
+        <div class="card-pricing__list xl:flex justify-center active-hover">
+        {% for card in items %}
+            {% include "molecules/card-pricing.twig" with { card:card, index:loop.index } only %}
+        {% endfor %}
+        </div>
+    </div>
+</section>

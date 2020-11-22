@@ -1,0 +1,66 @@
+{
+  "name": "pyxl/site",
+  "description": "Site version & installation configuration",
+  "authors": [
+    {
+      "name": "Michael Mizner",
+      "email": "mike@mizner.io"
+    }
+  ],
+  "config": {},
+  "extra": {
+    "installer-paths": {
+      "wp-content/themes/{$name}/": [
+        "type:wordpress-theme"
+      ],
+      "wp-content/plugins/{$name}/": [
+        "type:wordpress-plugin"
+      ],
+      "wp-content/mu-plugins/{$name}/": [
+        "type:wordpress-muplugin"
+      ]
+    }
+  },
+  "repositories": [
+    {
+      "type": "composer",
+      "url": "https://wpackagist.org"
+    },
+    {
+      "type": "composer",
+      "url": "https://composer.deliciousbrains.com/3998821A01BD70FAD9531E70B4F5EE17"
+    }
+  ],
+  "require-dev": {
+    "squizlabs/php_codesniffer": "^3.5",
+    "vlucas/phpdotenv": "^3.3",
+    "wp-coding-standards/wpcs": "*",
+    "wpackagist-plugin/query-monitor": "^3.3"
+  },
+  "require": {
+    "php": "^7.3",
+    "deliciousbrains-plugin/wp-migrate-db-pro": "*",
+    "deliciousbrains-plugin/wp-migrate-db-pro-media-files": "*",
+    "wpackagist-plugin/acf-color-swatches": "^1.0",
+    "wpackagist-plugin/imsanity": "^2.4",
+    "wpackagist-plugin/duplicate-post": "^3.2.4",
+    "wpackagist-plugin/simple-page-ordering": "^2.3"
+  },
+  "scripts": {
+    "setup": [
+      "composer install",
+      "yarn install",
+      "yarn build"
+    ],
+    "prod": [
+      "composer install --no-dev --optimize-autoloader",
+      "composer install -d wp-content/themes/look --no-dev --optimize-autoloader"
+    ],
+    "post-install-cmd": [
+      "composer install -d wp-content/themes/look"
+    ],
+    "post-update-cmd": [
+      "composer update -d wp-content/themes/look",
+    ]
+  }
+}

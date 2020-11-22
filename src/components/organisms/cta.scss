@@ -1,0 +1,123 @@
+.newsletter {
+  &__inner {
+    &.submitted {
+      @apply opacity-0;
+    }
+  }
+
+  &__confirmation {
+    top: 50%;
+    transform: translateY(-50%);
+    transition-delay: 700ms;
+
+    &.reveal {
+      @apply opacity-100;
+      // transform: rotateX(0deg) translateY(-50%);
+    }
+  }
+
+  .coupon-message {
+    &.reveal {
+      @apply opacity-100;
+    }
+  }
+
+  .coupon-code {
+    @apply bg-dark text-light rounded py-2 px-4;
+  }
+
+  .newsletter-form {
+    .input-wrapper {
+      @apply mr-2;
+    }
+
+    input[type='email'] {
+      padding-bottom: 0.75em;
+      padding-top: 0.75em;
+      @apply text-md;
+      @screen xl {
+        min-width: 462px;
+      }
+    }
+
+    .pristine-error {
+      @apply absolute text-light px-2 w-full text-sm;
+      background-color: #ff4242;
+      bottom: 100%;
+    }
+  }
+}
+
+
+
+.toastify {
+  background: -webkit-linear-gradient(315deg, #73a5ff, #5477f5);
+  background: linear-gradient(135deg, #73a5ff, #5477f5);
+  border-radius: 2px;
+  box-shadow: 0 3px 6px -1px rgba(0, 0, 0, 0.12), 0 10px 36px -4px rgba(77, 96, 232, 0.3);
+  color: #fff;
+  cursor: pointer;
+  display: inline-block;
+  max-width: calc(50% - 20px);
+  opacity: 0;
+  padding: 12px 20px;
+  position: fixed;
+  text-decoration: none;
+  transition: all 0.4s cubic-bezier(0.215, 0.61, 0.355, 1);
+  z-index: 2147483647;
+}
+
+.toastify.on {
+  opacity: 1;
+}
+
+.toast-close {
+  opacity: 0.4;
+  padding: 0 5px;
+}
+
+.toastify-right {
+  right: 15px;
+}
+
+.toastify-left {
+  left: 15px;
+}
+
+.toastify-top {
+  top: -150px;
+}
+
+.toastify-bottom {
+  bottom: -150px;
+}
+
+.toastify-rounded {
+  border-radius: 25px;
+}
+
+.toastify-avatar {
+  border-radius: 2px;
+  height: 1.5em;
+  margin: 0 5px;
+  width: 1.5em;
+}
+
+.toastify-center {
+  left: 0;
+  margin-left: auto;
+  margin-right: auto;
+  max-width: fit-content;
+  right: 0;
+}
+
+@media only screen and (max-width: 360px) {
+  .toastify-right,
+  .toastify-left {
+    left: 0;
+    margin-left: auto;
+    margin-right: auto;
+    max-width: fit-content;
+    right: 0;
+  }
+}

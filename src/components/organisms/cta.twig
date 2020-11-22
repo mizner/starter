@@ -1,0 +1,26 @@
+{{ add_script('pristinejs') }}
+{{ add_script('newsletter') }}
+{{ add_style('cta') }}
+
+{% from 'atoms/input.twig' import input, button %}
+
+<section class='newsletter bg-primary py-16 relative'>
+	<div class="newsletter__confirmation absolute w-full transition-all duration-700 ease-in-out opacity-0">
+		<div class="container text-center">
+			<h2 class='coupon-text mb-8 text-1xl md:text-2xl'>{{ __(thanks_message, 'look') }}</h2>
+			<div class="coupon-message opacity-0 transition-all duration-700 ease-in-out">
+				<p class=" text-md mb-2 font-semibold">{{ __('Your coupon code is', 'look')}}<span class="ml-2 text-lg coupon-code block mt-5 md:mt-0 md:inline-block"></span></p>
+				<p class='coupon-fineprint text-sm mt-4'>{{ __(fineprint|e, 'look') }}</p>
+			</div>
+		</div>
+	</div>
+	<div class='newsletter__inner container text-center transition-all duration-700 ease-in-out'>
+		<h2 class='newsletter__heading italic mb-6 text-1xl md:text-2xl'>{{ __(heading|e('wp_kses_post'), 'look')}}</h2>
+		<p class='newsletter__description mb-10 text-md font-medium'>{{ __(description|e('wp_kses_post'), 'look')}}</p>
+		<form class='newsletter-form' novalidate>
+			{{ input('newsletterEmail', __(placeholder, 'look'), 'email', __('Please format like "name@email.com"', 'look')) }}
+			{{ button( __(button, 'look'), 'btn-secondary px-24' ) }}
+		</form>
+		<p class='newsletter__fineprint text-sm mt-2'>{{ __(notice|e, 'look') }}</p>
+	</div>
+</section>

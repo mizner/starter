@@ -1,0 +1,5 @@
+{% macro button(text = 'Learn More', href = '#', target = '_self', class = 'btn') %}
+    <a href='{{ href|e('esc_url') }}' class='{{ class|e }}' target={{ target|e }}>
+        <span class='btn-text'>{{ __(text, 'loop')|e }}</span>
+    </a>
+{% endmacro %}

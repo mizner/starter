@@ -1,0 +1,9 @@
+{% extends "base.twig" %}
+
+{% block content %}
+
+	{% for fields in post.meta('blocks') %}
+		{% embed "organisms/#{fields.acf_fc_layout}.twig" with fields %}{% endembed %}
+	{% endfor %}
+
+{% endblock %}

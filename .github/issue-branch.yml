@@ -1,0 +1,6 @@
+# https://github.com/robvanderleek/create-issue-branch
+branches:
+  - label: enhancement
+    prefix: feature/
+  - label: bug
+    prefix: bug/

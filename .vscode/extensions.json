@@ -1,0 +1,36 @@
+{
+	// See http://go.microsoft.com/fwlink/?LinkId=827846 to learn about workspace recommendations.
+	// Extension identifier format: ${publisher}.${name}. Example: vscode.csharp
+	// List of extensions which should be recommended for users of this workspace.
+	"recommendations": [
+		// PHP
+		"ValeryanM.vscode-phpsab", // PHP Sniffer & Beautifier - https://marketplace.visualstudio.com/items?itemName=ValeryanM.vscode-phpsab
+		"bmewburn.vscode-intelephense-client", // PHP Intelephense - https://marketplace.visualstudio.com/items?itemName=bmewburn.vscode-intelephense-client
+		"MehediDracula.php-namespace-resolver", // PHP Namespace Resolver - https://marketplace.visualstudio.com/items?itemName=MehediDracula.php-namespace-resolver
+		"neilbrayfield.php-docblocker", // PHP DocBlocker - https://marketplace.visualstudio.com/items?itemName=neilbrayfield.php-docblocker
+		"felixfbecker.php-debug", // PHP Debug - https://marketplace.visualstudio.com/items?itemName=felixfbecker.php-debug
+		"ikappas.composer", // Composer - https://marketplace.visualstudio.com/items?itemName=ikappas.composer
+		// Node
+		"jasonnutter.search-node-modules", // Search node_modules - https://marketplace.visualstudio.com/items?itemName=jasonnutter.search-node-modules
+		"dbaeumer.vscode-eslint", // ESLint - https://marketplace.visualstudio.com/items?itemName=dbaeumer.vscode-eslint
+		// Git
+		"codezombiech.gitignore", // gitignore - https://marketplace.visualstudio.com/items?itemName=codezombiech.gitignore
+		"eamodio.gitlens", // GitLens — Git supercharged - https://marketplace.visualstudio.com/items?itemName=eamodio.gitlens
+		// CSS
+		"stylelint.vscode-stylelint", // Stylelint - https://marketplace.visualstudio.com/items?itemName=stylelint.vscode-stylelint
+		"mrmlnc.vscode-scss", // SCSS IntelliSense - https://marketplace.visualstudio.com/items?itemName=mrmlnc.vscode-scss
+		"kamikillerto.vscode-colorize", // Colorize - https://marketplace.visualstudio.com/items?itemName=kamikillerto.vscode-colorize
+		"bradlc.vscode-tailwindcss", // Tailwind Intellisense - https://marketplace.visualstudio.com/items?itemName=bradlc.vscode-tailwindcss
+		"macieklad.tailwind-sass-syntax", // Tailwind SCSS Syntax - https://marketplace.visualstudio.com/items?itemName=macieklad.tailwind-sass-syntax
+		// Misc
+		"mikestead.dotenv", // DotENV - https://marketplace.visualstudio.com/items?itemName=mikestead.dotenv
+		"DotJoshJohnson.xml", // XML Tools - https://marketplace.visualstudio.com/items?itemName=DotJoshJohnson.xml
+		"streetsidesoftware.code-spell-checker", // streetsidesoftware.code-spell-checker - https://marketplace.visualstudio.com/items?itemName=streetsidesoftware.code-spell-checker
+		"mrmlnc.vscode-apache", // Apache Conf - https://marketplace.visualstudio.com/items?itemName=mrmlnc.vscode-apache
+		"christian-kohler.path-intellisense", // Path Intellisense - https://marketplace.visualstudio.com/items?itemName=christian-kohler.path-intellisense
+		"formulahendry.auto-close-tag", // Auto Close Tag https://marketplace.visualstudio.com/items?itemName=formulahendry.auto-close-tag
+		"formulahendry.auto-rename-tag", // Auto Rename Tag - https://marketplace.visualstudio.com/items?itemName=formulahendry.auto-rename-tag
+	],
+	// List of extensions recommended by VS Code that should not be recommended for users of this workspace.
+	"unwantedRecommendations": []
+}

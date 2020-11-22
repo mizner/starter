@@ -1,0 +1,83 @@
+.header {
+  &__logo {
+    svg {
+      @apply h-auto w-full;
+    }
+  }
+
+  /**
+  * Mobile Navigation
+  */
+  .nav-mobile {
+    right: -100%;
+    width: 90%;
+
+    &.active {
+      @apply opacity-100 block right-0;
+    }
+
+    a {
+      @apply text-light text-center font-semibold no-underline text-lg mb-2;
+
+      @screen sm {
+        @apply text-xl;
+      }
+    }
+
+    .cart {
+      @apply absolute z-30;
+      bottom: 4rem;
+      right: 4rem;
+    }
+  }
+
+  .nav-mobile-toggle {
+    transform: translate(-1em, 0.5em);
+  }
+  /**
+  * Desktop Navigation
+  */
+  .nav-main {
+    ul {
+      @apply flex;
+    }
+
+    li {
+      @apply ml-2 relative px-3 py-2;
+      // Default state
+      &::after {
+        content: '';
+        height: 2px;
+        left: 50%;
+        transform: translate(-50%);
+        @apply
+          w-0
+          absolute
+          bg-light
+          bottom-0
+          transition-all
+          duration-500
+          ease-in-out
+          opacity-0;
+      }
+      // Hover states
+      &.current-menu-item,
+      &:focus,
+      &:hover {
+        @apply text-dark;
+
+        &::after {
+          @apply w-full opacity-100;
+        }
+      }
+    }
+
+    a {
+      @apply uppercase no-underline text-light text-center font-semibold text-sm;
+
+      @screen xl {
+        @apply text-base;
+      }
+    }
+  }
+}

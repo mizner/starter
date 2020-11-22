@@ -1,0 +1,16 @@
+{{ add_script('lightbox') }}
+{{ add_script('map') }}
+{{ add_style('map') }}
+
+<section class="map relative">
+	<header class="map__header md:absolute top-0 ax-center z-40 pt-20 pb-12">
+		<h2 class="italic text-1xl md:text-2xl">{{ __( heading|e('wp_kses_post'), 'look' ) }}</h2>
+	</header>
+	<div id="googleMap" class="google-map w-full bg-dark"></div>
+	<span class="hidden" data-pin='{{ pins|json_encode() }}'></span>
+	<noscript>
+		{% for pin in pins %}
+			{% include "molecules/map-info-window.twig" with pin %}
+		{% endfor %}
+	</noscript>
+</section>

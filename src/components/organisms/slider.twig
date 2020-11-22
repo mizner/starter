@@ -1,0 +1,35 @@
+{{ add_style('slider') }}
+{{ add_script('flickity') }}
+{{ add_script('flickity-fade') }}
+{{ add_style('flickity') }}
+{{ add_style('flickity-fade') }}
+<section class="slider relative bg-dark">
+	<div class="slider__header text-light absolute top-0 z-20 ax-center text-center mt-16 w-full max-w-sm md:max-w-3xl">
+		<div class="container">
+			<h2 class="italic text-1xl md:text-2xl">{{ __(heading|e, 'look') }}</h2>
+			<p class="text-md">{{ __(description|e('wp_kses_post'), 'look') }}</p>
+		</div>
+	</div>
+	<div class="slider-inner">
+		<div class="gallery" data-flickity='{ "selectedAttraction": "0.025", "friction": "0.28", "arrowShape": "M66.4198 90.4226C65.6463 91.1925 64.3921 91.1925 63.6186 90.4226L23 50L63.6185 9.57736C64.3921 8.80754 65.6463 8.80754 66.4198 9.57736C67.1934 10.3472 67.1934 11.5953 66.4198 12.3651L28.6026 50L66.4198 87.6349C67.1934 88.4047 67.1934 89.6528 66.4198 90.4226Z", "contain": true }'>
+			{% for slide in slides %}
+				<div class="gallery-cell w-full">
+					<div class="gallery-inner pt-64 relative">
+						<div class="gallery-image absolute w-full h-full z-10 overflow-hidden inset-0">
+							<img class="w-full h-full object-cover" srcset="{{ image.srcset|e('esc_url') }}" src="{{ slide.image.src|e('esc_url') }}" alt="{{ image.alt|e }}">
+						</div>
+						<div class="gallery-content z-20 relative text-light max-w-3xl text-center mr-auto ml-auto pb-16 pt-20">
+							<div class="container pt-64 md:pt-32">
+								<h4 class="md:mt-20 mb-4 text-md">{{ slide.heading|e }}</h4>
+								<p>{{ slide.description }}</p>
+							</div>
+						</div>
+					</div>
+				</div>
+			{% endfor %}
+		</div>
+	</div>
+	<div class="slider__link absolute text-center w-full">
+		<a class="" href="#">{{ __('MEET ALL OUR COACHES', 'look') }}</a>
+	</div>
+</section>

@@ -1,0 +1,27 @@
+.wp-block-gallery {
+  li::before {
+    content: none !important;
+  }
+
+  img {
+    height: auto !important;
+    margin: 0 !important;
+  }
+
+  &.alignfull,
+  &.alignwide {
+    margin: 2rem calc(50% - 50vw);
+    max-width: 100vw;
+    padding-left: 1em;
+    padding-right: 1em;
+    width: 100vw;
+  }
+
+  &.alignwide {
+    @media screen and (min-width: 1000px) {
+      margin: 2rem calc((#{$width--normal} - #{$width--wide}) / 2);
+      max-width: 100vw;
+      width: $width--wide;
+    }
+  }
+}

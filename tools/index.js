@@ -1,0 +1,12 @@
+export { scripts } from './tasks/scripts';
+export { globalStyles, tailwindStyles, chunkStyles } from './tasks/styles';
+export { fonts } from './tasks/fonts';
+export { copy } from './tasks/copy';
+export { templates } from './tasks/twig';
+export { phpcs, phpcbf } from './tasks/php';
+export { images } from './tasks/images';
+export { svgs } from './tasks/svgs';
+export { sprite } from './tasks/sprite';
+export { clean } from './tasks/clean';
+export { monitor } from './tasks/monitor';
+export { vendors } from './tasks/vendors';
