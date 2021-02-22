@@ -12,7 +12,6 @@ phpcs.log
 /.env
 /vendor
 
-
 ## Flywheel specific files
 /fw-status-check.php
 /fw-flush-cache.php
