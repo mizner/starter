@@ -1,8 +1,0 @@
-/*
- * Creates utils classes for tailwind
- * NOTE: You probably shouldn't or don't actually want to edit this file.
- */
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
-@tailwind screens;

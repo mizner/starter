@@ -1,5 +1,5 @@
 <?xml version="1.0"?>
-<ruleset name="PyxlStandard">
+<ruleset name="CustomStandard">
     <!--
     Section: Config
     Example: <config name="installed_paths" value="/path/to/standard1,/path/to/standard2"/>
@@ -10,7 +10,8 @@
     Section: Directories & Files to include
     Example: <file>./wp-content/plugins/_core</file>
     -->
-    <file>./wp-content/themes/look</file>
+    <file>./wp-content/themes/view</file>
+    <file>./wp-content/plugins/custom</file>
 
     <!--
     Section: Exclusions for directories and files
@@ -18,7 +19,7 @@
     -->
     <exclude-pattern>*/vendor/*</exclude-pattern>
     <exclude-pattern>*/vendor/*</exclude-pattern>
-    <exclude-pattern>wp-content/plugins/_core/vendor/*</exclude-pattern>
+    <exclude-pattern>wp-content/plugins/custom/vendor/*</exclude-pattern>
     <exclude-pattern>./core/*</exclude-pattern>
 
     <!-- Exclude all Javascript files. -->
