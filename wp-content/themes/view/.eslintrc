@@ -1,0 +1,44 @@
+{
+  "extends": [
+    "standard"
+  ],
+  "rules": {
+    "comma-dangle": [
+      "error",
+      {
+        "arrays": "always-multiline",
+        "objects": "always-multiline",
+        "imports": "never",
+        "exports": "never",
+        "functions": "always-multiline"
+      }
+    ],
+    "semi": [
+      2,
+      "always"
+    ],
+    "yoda": [
+      "error",
+      "always"
+    ],
+    "space-before-function-paren": [
+      "error",
+      "never"
+    ]
+  },
+  "globals": {
+    "$": "readonly",
+    "axios": "readonly",
+    "anime": "readonly",
+    "Pristine": "readonly",
+    "jQuery": "readonly",
+    "DOMParser": "readonly",
+    "compose": "readonly",
+    "ga": "readonly",
+    "CustomEvent": "readonly",
+    "GLOBAL": "readonly",
+    "NEWSLETTER": "readonly",
+    "MAP": "readonly",
+    "wp": "readonly"
+  }
+}

@@ -1,0 +1,21 @@
+{
+  "name": "mizner/custom",
+  "description": "Dependencies for CMS customizations",
+  "authors": [
+    {
+      "name": "Mizner",
+      "email": "michaelmizner@gmail.com"
+    }
+  ],
+  "config": {
+    "sort-packages": true
+  },
+  "repositories": [],
+  "require": {
+    "php": "^7.3",
+    "lstrojny/functional-php": "^1.14",
+    "moonwalkingbits/wordpress-autoloader": "^0.1.1",
+    "rmccue/requests": "^1.7",
+    "timber/timber": "^1.18"
+  }
+}

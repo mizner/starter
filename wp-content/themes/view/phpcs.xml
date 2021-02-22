@@ -1,0 +1,47 @@
+<?xml version="1.0"?>
+<ruleset name="PyxlStandard">
+    <!--
+    Section: Config
+    Example: <config name="installed_paths" value="/path/to/standard1,/path/to/standard2"/>
+    -->
+    <config name="installed_paths" value="vendor/wp-coding-standards/wpcs/WordPress-Extra,vendor/wp-coding-standards/wpcs/WordPress-Core,vendor/wp-coding-standards/wpcs/WordPress"/>
+
+    <!--
+    Section: Directories & Files to include
+    Example: <file>./wp-content/plugins/_core</file>
+    -->
+    <file>./wp-content/plugins/_core</file>
+    <file>./wp-content/themes/_view</file>
+
+    <!--
+    Section: Exclusions for directories and files
+    Example: <exclude-pattern>*/vendor/*</exclude-pattern>
+    -->
+    <exclude-pattern>*/vendor/*</exclude-pattern>
+    <exclude-pattern>*/vendor/*</exclude-pattern>
+    <exclude-pattern>wp-content/plugins/_core/vendor/*</exclude-pattern>
+    <exclude-pattern>./core/*</exclude-pattern>
+
+    <!-- Exclude all Javascript files. -->
+    <exclude-pattern>*.js</exclude-pattern>
+
+    <!-- Exclude all CSS files. -->
+    <exclude-pattern>*.css</exclude-pattern>
+
+    <!--
+    Section: Rules Sets
+    -->
+
+	<rule ref="WordPress-Core">
+        <exclude name="Generic.Arrays.DisallowShortArraySyntax" />
+    </rule>
+
+    <rule ref="WordPress-Extra">
+        <exclude name="WordPress.NamingConventions.ValidHookName.UseUnderscores" />
+        <exclude name="WordPress.Files.FileName.NotHyphenatedLowercase" />
+        <exclude name="WordPress.PHP.DisallowShortTernary" />
+    </rule>
+
+    <rule ref="Generic.Arrays.DisallowLongArraySyntax"/>
+
+</ruleset>

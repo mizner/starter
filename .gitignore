@@ -5,6 +5,7 @@ yarn-error.log
 npm-debug.log
 debug.log
 phpcs.log
+.npmrc
 
 ## Root Files / Folders
 /.idea
@@ -53,5 +54,5 @@ wp-cli.local.php
 wp-cli.local.yml
 
 ## Exceptions (Generally, our custom work)
-!/wp-content/themes/look
-!/wp-content/plugins/do
+!/wp-content/themes/view
+!/wp-content/plugins/custom
