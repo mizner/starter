@@ -1,0 +1,76 @@
+name: Deploy!!
+on:
+  push:
+    branches:
+      - main
+      - stag
+      - dev
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Sync project files
+        uses: actions/checkout@v2 # https://github.com/marketplace/actions/checkout
+
+      - name: Setup SSH agent
+        uses: webfactory/ssh-agent@v0.4.1 # https://github.com/marketplace/actions/webfactory-ssh-agent
+        with:
+          ssh-private-key: ${{ secrets.PRIVATE_KEY }}
+
+      - name: Add host key
+        run: ssh-keyscan 161.47.86.132 >> ~/.ssh/known_hosts
+
+      - name: Setup WP CLI
+        run: |
+          cd .. && mkdir wp && cd wp
+          curl -O https://raw.githubusercontent.com/wp-cli/builds/gh-pages/phar/wp-cli.phar
+          chmod +x wp-cli.phar
+          sudo mv wp-cli.phar /usr/local/bin/wp
+
+      - name: Setup Node & NVM # https://github.com/marketplace/actions/setup-node-js-environment
+        uses: actions/setup-node@v1
+        with:
+          node-version: '14'
+
+      - name: Setup PHP w/ Composer # https://github.com/marketplace/actions/setup-php-action
+        uses: shivammathur/setup-php@v2
+        with:
+          php-version: '7.2'
+          tools: composer:v2
+          extensions: zip
+
+      # - name: Install NPM modules
+      #   run: |
+      #     cd wp-content/themes/CUCSTheme
+      #     yarn install && yarn build
+      #     rm -rf node_modules
+
+      - name: Install Composer Packages
+        run: |
+          composer config --auth http-basic.satis.mizner.io ${{ secrets.SATIS_USER }} ${{ secrets.SATIS_PASS }}
+          composer config --auth http-basic.composer.deliciousbrains.com ${{ secrets.DELICIOUSBRAINS_USER }} ${{ secrets.DELICIOUSBRAINS_PASS }}
+          composer install --no-dev
+          composer run-script install-wordpress
+
+      - name: Run git commands
+        run: |
+          find . -name ".gitignore" -exec rm -f {} \;
+          git config --global user.email "dev@greatbeliever.us"
+          git config --global user.name "gb"
+          git add .
+          git commit -m "commit before deploy"
+          git fetch --unshallow
+
+      # - name: Push to Prod
+      #   if: endsWith(github.ref, 'main')
+      #   run: git push pf_dev@161.47.86.132:~/git/pointfoundation.git -f
+
+      # - name: Push to Stag
+      #   if: endsWith(github.ref, 'stag')
+      #   run: git push gb_env@161.47.86.132:~/git/pointfoundation.stag.git -f
+
+      # - name: Push to Dev
+      #   if: endsWith(github.ref, 'dev')
+      #   run: git push gb_env@161.47.86.132:~/git/pointfoundation.dev.git -f
