@@ -12,8 +12,6 @@
 
 namespace Custom;
 
-use const PATH;
-
 /**
  * Class used to autoload classes following the WordPress coding standard.
  *
