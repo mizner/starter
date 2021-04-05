@@ -12,9 +12,8 @@
   },
   "repositories": [],
   "require": {
-    "php": "^7.3",
+    "php": "^7.4",
     "lstrojny/functional-php": "^1.14",
-    "moonwalkingbits/wordpress-autoloader": "^0.1.1",
     "rmccue/requests": "^1.7",
     "timber/timber": "^1.18"
   }
