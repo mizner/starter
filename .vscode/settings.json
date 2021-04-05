@@ -5,9 +5,8 @@
     "window.title": "${dirty}${activeEditorLong}${separator}${rootName}",
     "files.associations": {},
     "files.exclude": {
-        "starter-files": false,
         "**/*.lock": false,
-        "wp-content/themes/look/dist": false,
+        "wp-content/themes/view/dist/**.*": true,
     },
     "editor.tabCompletion": "on", // Enable Snippets
     "editor.formatOnSaveTimeout": 2000,
