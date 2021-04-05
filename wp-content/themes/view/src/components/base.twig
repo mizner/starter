@@ -1,0 +1,52 @@
+
+<!doctype html>
+<!--[if lt IE 9]><html class="no-js no-svg ie lt-ie9 lt-ie8 lt-ie7" {{ site.language_attributes }}> <![endif]-->
+<!--[if IE 9]><html class="no-js no-svg ie ie9 lt-ie9 lt-ie8" {{ site.language_attributes }}> <![endif]-->
+<!--[if gt IE 9]><!--><html class="no-js no-svg" {{ site.language_attributes }}> <!--<![endif]-->
+	{% block html_head_container %}
+		<head>
+			<meta charset="{{ site.charset }}" />
+			<meta name="description" content="{{ site.description }}">
+			<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+			<meta http-equiv="X-UA-Compatible" content="IE=edge">
+			<meta name="viewport" content="width=device-width, initial-scale=1">
+			<link rel="author" href="{{ site.theme.link }}/humans.txt" />
+			<link rel="pingback" href="{{ site.pingback_url }}" />
+			<link rel="profile" href="http://gmpg.org/xfn/11">
+			{{ function('wp_head') }}
+			{% block head %}
+			{% endblock %}
+		</head>
+	{% endblock %}
+	<body class="{{body_class}}" data-template="base.twig" data-scroll-enabled="true">
+		<div class="overlay bg-dark fixed top-0 bottom-0 w-full z-30 opacity-0 duration-1000 ease-in-out"></div>
+		{% include "sprite.svg" %}
+		<a class="skip-link screen-reader-text" href="#content">
+			<span>{{ _e( 'Skip to content') }}</span>
+		</a>
+		{% block header %}
+			{% include 'organisms/header.twig' %}
+		{% endblock %}
+
+		<section id="content" role="main" class="content-wrapper">
+			<div class="wrapper {{ sidebar_class }}">
+				{% block content %}
+					{% if title %}
+						<h1>{{title}}</h1>
+					{% endif %}
+					Sorry, no content
+				{% endblock %}
+			</div>
+			{% if sidebar %}
+				<aside class="layout-sidebar">
+					{{ sidebar }}
+				</aside>
+			{% endif %}
+		</section>
+
+		{% block footer %}
+			{% include 'organisms/footer.twig' %}
+			{{ function('wp_footer') }}
+		{% endblock %}
+	</body>
+</html>

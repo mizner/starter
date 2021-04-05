@@ -1,0 +1,37 @@
+.footer {
+  &__heading {
+    @apply text-light font-thin text-base mb-6;
+  }
+
+  &__logo {
+    @media screen and (min-width: 1441px) {
+      margin-left: 10%;
+    }
+  }
+
+  &__menus {
+    @screen lg {
+      margin-left: 10%;
+      margin-right: 10%;
+    }
+
+    @media screen and (min-width: 1441px) {
+      max-width: 50%;
+    }
+  }
+
+  .container {
+    // specific for full with footer
+    @media screen and (min-width: 1441px) {
+      max-width: none;
+    }
+  }
+
+  .menu-item {
+    @apply mb-3;
+
+    a {
+      @apply text-gray-200 opacity-50 text-sm font-normal inline-block;
+    }
+  }
+}

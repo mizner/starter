@@ -6,7 +6,7 @@ const theme = `${root}/wp-content/themes/look`;
 const plugin = `${root}/wp-content/plugins/do`;
 
 const src = `${root}/src`;
-const dist = `${theme}/dist`;
+const dist = `${root}/dist`;
 
 const paths = {
   src: {

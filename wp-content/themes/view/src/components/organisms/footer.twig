@@ -1,0 +1,41 @@
+<footer id="footer" class=" footer bg-dark text-white py-32">
+	<div class="container lg:flex justify-between">
+		<div class="footer__logo md:mt-4">
+			{% include "logo-white.svg" %}
+		</div>
+		<div class="footer__menus sm:flex justify-between w-full">
+			<div class="footer__address mt-8">
+				<h4 class="footer__heading">{{ __('ABOUT', 'look') }}</h4>
+				<ul>
+					<li class="menu-item">
+						<a href="#">{{ address.name|e }}</a>
+					</li>
+					<li class="menu-item">
+						<a href="#">{{ address.address_one|e }}</a>
+					</li>
+					<li class="menu-item">
+						<a href="#">{{ address.address_two|e }}</a>
+					</li>
+					<li class="menu-item">
+						<a href="#">{{ address.city|e }}</a>
+					</li>
+					<li class="menu-item">
+						<a href="#">{{ address.state|e }} {{ address.zip|e }}</a>
+					</li>
+					<li class="menu-item">
+						<a href="#">{{ address.country|e }}</a>
+					</li>
+
+				</ul>
+			</div>
+			<div class="footer__secondary mt-8">
+				<h4 class="footer__heading">{{ __('SITEMAP', 'look') }}</h4>
+				{% include "molecules/menu.twig" with {'items': menus.footer_primary.get_items} %}
+			</div>
+			<div class="footer__tertiary mt-8">
+				<h4 class="footer__heading">{{ __('SOCIAL', 'look') }}</h4>
+				{% include "molecules/menu.twig" with {'items': menus.footer_secondary.get_items} %}
+			</div>
+		</div>
+	</div>
+</footer>

@@ -1,0 +1,14 @@
+{% from "atoms/button.twig" import button %}
+<div class="preview-product relative md:ml-5 mb-4">
+	<img class="preview-product__image object-cover w-full h-full absolute top-0 bottom-0 z-10" width="{{ product.thumbnail.width }}" height="{{ product.thumbnail.height }}" src="{{ product.thumbnail.src|e('esc_url') }}" srcset="{{ product.thumbnail.srcset|e }}" alt="{{ __( product.thumbnail.alt|e, 'look') }}">
+    <div class="preview-product__overlay absolute w-full top-0 bottom-0 z-20"></div>
+	<div class="preview-product__info absolute bottom-0 w-full flex justify-between z-30 py-6 px-4">
+		<div class="preview-product__contact">
+			<h3 class="text-md text-light font-medium">{{ product.title|e("esc_html") }}</h3>
+			<p class="text-base text-light mb-0 font-bold">${{ product.meta("_price")|e }}</p>
+		</div>
+		<div class="preview-product__action">
+			{{ button("BUY NOW", "?add-to-cart=#{product.id}") }}
+		</div>
+	</div>
+</div>

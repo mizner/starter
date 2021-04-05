@@ -14,7 +14,7 @@
     "not Opera > 0"
   ],
   "watch": {
-    "proxy": "https://vigor.test",
+    "proxy": "https://portal.jed.test",
     "port": 3333,
     "ui": false,
     "online": true

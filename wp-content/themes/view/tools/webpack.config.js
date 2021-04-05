@@ -31,7 +31,7 @@ const webpackConfig = {
     filename: '[name].js',
   },
   node: {
-    fs: 'empty', // avoids error messages
+    // fs: 'empty', // avoids error messages
   },
 };
 

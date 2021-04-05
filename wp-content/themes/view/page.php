@@ -14,14 +14,19 @@
  * @since    Timber 0.1
  */
 
+use Timber\Timber;
+
 $context = Timber::context();
 
-
-$timber_post     = new Timber\Post();
-$context['post'] = $timber_post;
-$templates = [
-    'pages/' . $timber_post->post_name . '.twig',
-    'templates/page.twig'
-];
+if ( is_home() ) {
+	$templates[] = [
+		'pages/home.twig',
+	];
+} else {
+	$templates = [
+		'pages/' . $timber_post->post_name . '.twig',
+		'templates/page.twig',
+	];
+}
 
 Timber::render( $templates, $context );

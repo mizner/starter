@@ -12,8 +12,8 @@
  * @subpackage  Timber
  * @since   Timber 0.1
  */
+use Timber\Timber;
 
-$context          = Timber::context();
-$context['posts'] = new Timber\PostQuery();
-$templates        = [ 'templates/index.twig' ];
+$context   = Timber::context();
+$templates = [ 'templates/index.twig' ];
 Timber::render( $templates, $context );
