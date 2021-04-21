@@ -15,7 +15,11 @@ class Format_Types {
 	 * Return Timber Image class and features to all ACF images
 	 */
 	public function format_acf_images( $value, $post_id, $field ) {
-		return new Timber\Image( $value );
+		if ( $value ) {
+			return new Timber\Image( $value );
+		}
+
+		return $value;
 	}
 
 	/**
