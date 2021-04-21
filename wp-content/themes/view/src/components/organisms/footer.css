@@ -1,0 +1,13 @@
+.footer {
+  @apply bg-dark;
+}
+
+.footer__heading {
+  @apply text-light font-thin text-base;
+}
+
+.footer__logo {
+}
+
+.footer__menus {
+}
