@@ -1,10 +1,15 @@
+const isProduction = process.env.NODE_ENV === 'production'
+
 module.exports = {
   important: false,
-  purge: [
-    './src/**/*.twig',
-    './src/**/*.js',
-    './src/**/*.scss',
-  ],
+  purge: {
+    content: [
+      './src/**/*.twig',
+      './src/**/*.js',
+      './src/**/*.scss',
+    ],
+    enabled: isProduction
+  },
   theme: {
     // https://tailwindcss.com/docs/theme/#app
     screens: {
@@ -17,31 +22,28 @@ module.exports = {
     container: {
       center: true,
       padding: {
-        default: '1rem',
+        DEFAULT: '1.5rem',
         sm: '2rem',
-        lg: '4rem',
-        xl: '6rem',
+        lg: '12rem',
+        xl: '14.25rem',
       },
     },
     fontFamily: {
       // Please Keep this under 3 or less fonts if possible. - https://tailwindcss.com/docs/font-family/#app
-      base: ['IBM Plex Sans', 'sans-serif'],
-      // primary: ['Montserrat', 'sans-serif'],
-      // secondary: ['Montserrat', 'sans-serif'],
-      // tertiary: ['Montserrat', 'sans-serif'],
+      base: ['Open Sans', 'sans-serif'],
+      // heading: ['Montserrat', 'sans-serif'],
+      // accent: ['Montserrat', 'sans-serif'],
     },
     fontSize: {
       // Please base this on https://type-scale.com
       xs: '0.64rem',
       sm: '0.75rem',
-      base: '1rem', // p, h6
-      md: '1.25rem', // h5
-      lg: '1.625rem', // h4
-      xl: '1.953rem', // h3
-      '1xl': '2.25rem', // h2
-      '2xl': '3.6875rem', // h1
-      '3xl': '4.8rem',
-      '4xl': '6.9375rem',
+      md: '1rem', // p, h6
+      lg: '1.25rem', // h5
+      xl: '1.625rem', // h4
+      '1xl': '1.953rem', // h3
+      '2xl': '2.25rem', // h2
+      '3xl': '3.6875rem', // h1
     },
     colors: {
       // https://tailwindcss.com/docs/customizing-colors/#app
@@ -52,6 +54,7 @@ module.exports = {
       warning: '#FF7B00',
       error: '#B61200',
       gray: {
+        DEFAULT: '#bdbdbd',
         100: '#f5f5f5',
         200: '#eeeeee',
         300: '#e0e0e0',
@@ -67,6 +70,14 @@ module.exports = {
       // https://tailwindcss.com/docs/theme/#app
       screens: {
         '2xl': '1440px',
+      },
+      borderWidth: {
+        1: '1px',
+      },
+      borderRadius: {
+        none: '0',
+        DEFAULT: '3px',
+        sm: '0.125rem',
       },
     },
   },
