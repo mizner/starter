@@ -1,0 +1,52 @@
+input[type='submit'],
+input[type='reset'],
+input[type='button'],
+button,
+.button,
+.btn {
+  @apply
+    py-4
+    px-8
+    bg-primary
+    font-bold
+    text-dark
+    no-underline
+    transition
+    ease-in
+    duration-200
+    inline-block
+    mb-2
+    border-2
+    border-primary
+    text-md;
+
+  span {
+    @apply inline-block;
+  }
+
+  svg {
+    @apply fill-current;
+  }
+
+  &:disabled {
+    @apply opacity-50;
+  }
+
+  &:hover,
+  &:focus {
+    @apply bg-dark text-light outline-none border-dark;
+  }
+}
+
+.btn-secondary {
+  @apply border-light;
+
+  &:hover,
+  &:focus {
+    @apply bg-dark text-light ;
+  }
+}
+
+.btn-tertiary {
+  @apply border-primary bg-transparent text-primary;
+}

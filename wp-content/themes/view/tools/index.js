@@ -1,7 +1,6 @@
 export { scripts } from './tasks/scripts';
-export { globalStyles, tailwindStyles, chunkStyles } from './tasks/styles';
+export { globalStyles, chunkStyles } from './tasks/styles';
 export { fonts } from './tasks/fonts';
-export { copy } from './tasks/copy';
 export { templates } from './tasks/twig';
 export { phpcs, phpcbf } from './tasks/php';
 export { images } from './tasks/images';

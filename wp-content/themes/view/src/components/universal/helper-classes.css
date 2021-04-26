@@ -1,0 +1,29 @@
+/**
+ * Some key selectors
+ */
+
+.wrapper {
+    @apply relative;
+}
+
+.icon {
+    @apply inline-block relative;
+    & svg {
+        @apply h-full w-full;
+    }
+}
+
+
+.content {
+    @apply m-auto max-w-xl;
+}
+
+.abs-center-x {
+    right: 50%;
+    transform: translateX(50%);
+}
+
+.abs-center-y {
+    top: 50%;
+    transform: translateY(-50%);
+}

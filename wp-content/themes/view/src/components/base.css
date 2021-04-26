@@ -1,0 +1,6 @@
+@import-glob
+  "universal/**/*.css",
+  "utils/**/*.css",
+  "vendors/**/*.css",
+  "atoms/**/*.css",
+  "molecules/**/*.css";

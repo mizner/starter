@@ -1,0 +1,117 @@
+/**
+ * Base Elements
+ */
+ html {
+    font-size: 16px;
+
+    /*
+    Having to force this due to using negative margins for custom block widths
+    @see https://codepen.io/tigt/post/bust-elements-out-of-containers-with-one-line-of-css
+    */
+    overflow-x: hidden;
+  }
+
+  body {
+    @apply text-dark font-base text-md m-0;
+
+    & [data-scroll-enabled='false'] {
+      @apply overflow-hidden;
+    }
+  }
+
+  main {
+
+  }
+
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    @apply leading-none my-1 font-bold tracking-tight;
+  }
+
+  h1 {
+    @apply text-3xl mt-0;
+  }
+
+  h2 {
+    @apply text-2xl;
+  }
+
+  h3 {
+    @apply text-1xl;
+  }
+
+  h4 {
+    @apply text-lg;
+  }
+
+  h5 {
+    @apply text-md;
+  }
+
+  h6 {
+    @apply text-sm;
+  }
+
+  small {
+    @apply text-sm;
+  }
+
+  p {
+    @apply text-md font-base mt-2 mb-8;
+  }
+
+  a {
+    @apply text-primary font-semibold;
+
+    &:focus,
+    &:hover {
+      @apply text-primary;
+    }
+  }
+
+  ul {
+    & li {
+      @apply pl-1;
+    }
+  }
+
+  ol {
+    & li {
+      @apply pl-1;
+    }
+  }
+
+
+  blockquote {
+    @apply relative;
+  }
+
+  cite {
+    /* Code */
+  }
+
+
+  hr {
+    /* Code */
+  }
+
+  figure {
+    @apply m-0;
+  }
+
+  img,
+  picture {
+    @apply h-auto max-w-full block;
+  }
+
+  caption {
+    @apply leading-loose;
+  }
+
+  ::selection {
+    /* Code */
+  }

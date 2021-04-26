@@ -1,0 +1,23 @@
+table,
+th,
+td {
+  /* Code */
+}
+
+th,
+td {
+  @apply py-1 px-2;
+}
+
+
+table {
+  @apply border-collapse;
+}
+
+th {
+  /* Code */
+}
+
+td {
+  @apply h-4 align-bottom;
+}

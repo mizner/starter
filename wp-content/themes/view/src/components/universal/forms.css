@@ -1,0 +1,62 @@
+form {
+    @apply mb-0;
+}
+
+label {
+    @apply text-sm;
+}
+
+select,
+input,
+textarea {
+    @apply
+        py-4
+        px-8
+        bg-transparent
+        text-dark
+        no-underline
+        transition
+        ease-in
+        duration-200
+        inline-block
+        text-md
+        font-normal;
+}
+
+select::placeholder,
+input::placeholder,
+textarea::placeholder {
+    @apply text-dark;
+}
+
+select::focus,
+input::focus,
+textarea::focus {
+
+}
+
+input:hover,
+input:focus {
+    @apply outline-none;
+}
+
+textarea {
+    /* code */
+}
+
+textarea:hover,
+textarea:focus {
+
+}
+
+label {
+    /* code */
+}
+
+iframe {
+    @apply max-w-full;
+}
+
+select {
+    /* code */
+}

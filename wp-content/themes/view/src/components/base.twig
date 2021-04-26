@@ -1,4 +1,3 @@
-
 <!doctype html>
 <!--[if lt IE 9]><html class="no-js no-svg ie lt-ie9 lt-ie8 lt-ie7" {{ site.language_attributes }}> <![endif]-->
 <!--[if IE 9]><html class="no-js no-svg ie ie9 lt-ie9 lt-ie8" {{ site.language_attributes }}> <![endif]-->
@@ -19,7 +18,7 @@
 		</head>
 	{% endblock %}
 	<body class="{{body_class}}" data-template="base.twig" data-scroll-enabled="true">
-		<div class="overlay bg-dark fixed top-0 bottom-0 w-full z-30 opacity-0 duration-1000 ease-in-out"></div>
+		<div class="fixed top-0 bottom-0 z-30 w-full duration-1000 ease-in-out opacity-0 overlay bg-dark"></div>
 		{% include "sprite.svg" %}
 		<a class="skip-link screen-reader-text" href="#content">
 			<span>{{ _e( 'Skip to content') }}</span>

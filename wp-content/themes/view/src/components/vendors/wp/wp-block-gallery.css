@@ -1,0 +1,27 @@
+.wp-block-gallery li::before {
+    content: none !important;
+}
+
+.wp-block-gallery.alignfull,
+.wp-block-gallery.alignwide {
+    margin: 2rem calc(50% - 50vw);
+    max-width: 100vw;
+    padding-left: 1em;
+    padding-right: 1em;
+    width: 100vw;
+}
+/*
+    OLD .scss vars
+    $width--line-length: 40rem;
+    $width--normal: $width--line-length;
+    $width--wide: 77rem;
+    $width--full: 100%;
+*/
+
+@screen md {
+    .wp-block-gallery.alignfull {
+        margin: 2rem calc((40rem - 77rem) / 2);
+        max-width: 100vw;
+        width: 77rem;
+    }
+}

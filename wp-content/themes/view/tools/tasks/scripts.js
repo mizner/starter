@@ -10,13 +10,15 @@ import { paths } from '../utils/paths';
 import { find } from 'globule';
 
 const srcPaths = find([
-  `${paths.src.scripts}/*.js`,
-  `${paths.src.views}/**/*.js`,
+  `${paths.src.components}/organisms/*.js`,
+  `${paths.src.components}/templates/*.js`,
+  `${paths.src.components}/pages/*.js`,
+  `${paths.src.components}/*.js`,
 ]);
 
 /**
  *
- * @param file
+ * @param currentPath
  * @returns {string}
  * @note This is specifically to search in globbed paths to identify view modules, for some reason multiple
  *       webpack instances wasn't working. The result being something like taking 'views/blocks/hero/hero.js'
@@ -25,10 +27,12 @@ const srcPaths = find([
 function filterToIdentifyViews(currentPath) {
   const originalPath = parse(srcPaths.find(path => path.includes(currentPath.basename)));
 
-  if (originalPath.dir.includes(paths.src.views)) {
-    return originalPath.dir.replace(paths.src.views, paths.dist.views);
-  } else {
-    return originalPath.dir.replace(paths.src.scripts, paths.dist.scripts);
+  if (srcPaths.includes(`${originalPath.dir}/${originalPath.base}`)) {
+    return originalPath.dir.replace('/src/', '/dist/')
+  }
+  else {
+    new Error('file not found in sources')
+    process.exit(0)
   }
 }
 

@@ -1,26 +1,20 @@
 import { mode } from '../utils/env';
-import { parse } from 'path';
 import { paths, root } from '../utils/paths';
 import { server } from './serve';
 import { src, dest } from 'gulp';
-import { find } from 'globule';
 import noop from 'gulp-noop';
 import plumber from 'gulp-plumber';
 import pump from 'pump';
-import sass from 'gulp-sass';
 import rename from 'gulp-rename';
 import cleanCSS from 'gulp-clean-css';
 import sourcemaps from 'gulp-sourcemaps';
-import sassImport from 'node-sass-package-importer';
 import inject from 'gulp-header';
-import sassGlob from 'gulp-sass-glob';
 import postcss from 'gulp-postcss';
+import postcssPresetEnv from 'postcss-preset-env';
+import postcssImport from 'postcss-import';
+import postcssGlobImport from 'postcss-import-ext-glob';
 import autoprefixer from 'autoprefixer';
 import tailwindCSS from 'tailwindcss';
-
-const srcPaths = find([
-  `${paths.src.components}/**/*.scss`,
-]);
 
 const options = {
   tailwind: require(`${root}/tailwind.config.js`),
@@ -31,53 +25,43 @@ const options = {
       },
     },
   },
-  sass: {
-    importer: sassImport(),
-    includePaths: [
-      paths.src.styles,
-      paths.src.views,
-      tailwindCSS.includePaths,
-    ],
-  },
   rename: {
-    // suffix: 'production' === mode ? '.min' : '',
+    suffix: 'production' === mode ? '.min' : '',
     extname: '.css',
   },
   autoprefixer: {
     grid: false, // autoplace,
     cascade: false,
   },
-  purgeCSS: {
-    whitelist: [
-      'body',
-    ],
-    css: [
-      './src/**/*.scss',
-    ],
-    content: [
-      './src/**/*.js',
-      './src/**/*.twig',
-    ],
-  },
+  postcssPresetEnvOptions: {
+    stage: 3,
+    features: {
+      'nesting-rules': true
+    }
+  }
 };
 
 function globalStyles(cb) {
   return pump([
     src([
-      `${paths.src.components}/base.scss`
+      `${paths.src.components}/base.css`
     ]),
     plumber(),
     'production' === mode ? noop() : sourcemaps.init(),
-    sassGlob(),
-    sass(options.sass).on('error', sass.logError),
+    postcss([
+      postcssGlobImport(),
+      postcssImport(),
+    ]),
+    inject(`@tailwind base; @tailwind components; @tailwind utilities; @tailwind screens;`),
     postcss([
       tailwindCSS(),
+      postcssPresetEnv(options.postcssPresetEnvOptions),
       autoprefixer(options.autoprefixer),
     ]),
     'production' === mode ? cleanCSS(options.cleanCSS) : noop(),
     rename(options.rename),
     'production' === mode ? noop() : sourcemaps.write(),
-    dest(paths.dist.styles),
+    dest((currentPath => currentPath._base.replace('/src/', '/dist/'))),
     server.stream(),
   ], cb);
 }
@@ -85,16 +69,17 @@ function globalStyles(cb) {
 function chunkStyles(cb) {
   return pump([
     src([
-      `${paths.src.components}/organisms/**/*.scss`,
-      `${paths.src.components}/templates/**/*.scss`,
-      `${paths.src.components}/pages/**/*.scss`,
+      `${paths.src.components}/organisms/**/*.css`,
+      `${paths.src.components}/templates/**/*.css`,
+      `${paths.src.components}/pages/**/*.css`,
     ]),
     plumber(),
     'production' === mode ? noop() : sourcemaps.init(),
-    sassGlob(),
-    sass(options.sass).on('error', sass.logError),
     postcss([
+      postcssGlobImport(),
+      postcssImport(),
       tailwindCSS(options.tailwind),
+      postcssPresetEnv(options.postcssPresetEnvOptions),
       autoprefixer(options.autoprefixer),
     ]),
     'production' === mode ? cleanCSS(options.cleanCSS) : noop(),
@@ -104,4 +89,7 @@ function chunkStyles(cb) {
   ], cb);
 }
 
-export { globalStyles, chunkStyles, tailwindStyles };
+export {
+    globalStyles,
+    chunkStyles,
+};
