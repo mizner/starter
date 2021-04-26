@@ -1,0 +1,43 @@
+
+.slider .flickity-button {
+  @apply text-light bg-transparent p-0;
+  height: 74px;
+  width: 74px;
+}
+
+.slider .flickity-button:hover,
+.slider .flickity-button:focus {
+  @apply bg-dark;
+}
+
+
+.slider .flickity-button svg {
+  @apply fill-current;
+}
+
+.slider .flickity-button .next {
+  & @screen lg {
+    right: 5rem;
+  }
+}
+
+.slider .flickity-button .previous {
+  & @screen lg {
+     left: 5rem;
+  }
+}
+
+.slider .flickity-page-dots {
+  @apply bottom-0 pb-5;
+}
+
+.slider .flickity-page-dots .dot {
+  background: white;
+  height: 8px;
+  width: 8px;
+  @apply bg-opacity-25;
+}
+
+.slider .flickity-page-dots .is-selected {
+  @apply opacity-100;
+}

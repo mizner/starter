@@ -3,7 +3,7 @@
 }
 
 .footer__heading {
-  @apply text-light font-thin text-base;
+  @apply text-light font-thin text-md;
 }
 
 .footer__logo {

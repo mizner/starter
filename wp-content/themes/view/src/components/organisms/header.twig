@@ -1,29 +1,27 @@
-{{ add_style("header") }}
-
-<header class="header w-full top-0 z-40 bg-dark" role="banner">
-	<section class="header__wrapper container flex flex-wrap justify-between items-center pb-4">
-		<div class="header__logo w-20 sm:w-24 lg:w-auto block">
-			<a href="{{site.url}}" class="logo block w-full" rel="home">
+<header class="header" role="banner">
+	<section class="header__wrapper">
+		<div class="header__logo">
+			<a href="{{site.url}}" class="" rel="home">
 				<h1 class="screen-reader-text">{{site.name}}</h1>
 				{% include "logo-regular.svg" %}
 			</a>
 		</div>
-		<div class="header__menu flex flex-wrap justify-between items-center">
-			<div class="header-menu-desktop hidden lg:block">
+		<div class="flex flex-wrap items-center justify-between header__menu">
+			<div class="hidden header-menu-desktop lg:block">
 				<nav id="navMain" class="nav-main" role="navigation" itemscope itemtype="http://schema.org/SiteNavigationElement">
 					{% include "molecules/menu.twig" with {'items': menus.header_primary.get_items} %}
 				</nav>
 			</div>
 			<div class="header-menu-mobile lg:hidden">
-				<button class="nav-mobile-toggle text-light p-0 bg-transparent m-0 border-none">
-					<svg class="icon w-8 h-8">
+				<button class="p-0 m-0 bg-transparent border-none nav-mobile-toggle text-light">
+					<svg class="w-8 h-8 icon">
 						<use xlink:href="#icon-bars"></use>
 					</svg>
 				</button>
-				<nav id="navMobile" class="nav-mobile fixed bottom-0 top-0 h-screen z-40 bg-dark ease-in-out transition-all duration-700" role="navigation" itemscope itemtype="http://schema.org/SiteNavigationElement">
-					<div class="flex justify-center items-center h-full relative z-50">
-						<button class="nav-mobile-toggle text-light bg-transparent m-0 transform-none absolute top-0 right-0 p-4 border-none ">
-							<svg class="icon w-8 h-8">
+				<nav id="navMobile" class="fixed top-0 bottom-0 z-40 h-screen transition-all duration-700 ease-in-out nav-mobile bg-dark" role="navigation" itemscope itemtype="http://schema.org/SiteNavigationElement">
+					<div class="relative z-50 flex items-center justify-center h-full">
+						<button class="absolute top-0 right-0 p-4 m-0 bg-transparent border-none nav-mobile-toggle text-light transform-none ">
+							<svg class="w-8 h-8 icon">
 								<use xlink:href="#icon-times"></use>
 							</svg>
 						</button>

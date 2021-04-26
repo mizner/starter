@@ -1,0 +1,42 @@
+.google-map {
+  height: 500px;
+}
+
+@screen lg {
+  height: 878px;
+}
+
+.google-map .storemapper-iw-close {
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: 10px 10px;
+  border: none;
+  height: 16px;
+  right: 5px;
+  top: 5px;
+  width: 16px;
+}
+
+.google-map .gm-style .gm-style-iw-t::after {
+  @apply hidden;
+}
+
+.google-map .gm-style .gm-style-iw-c {
+  @apply rounded-none pl-6 pt-6;
+  box-shadow: none;
+  z-index: 100 !important;
+}
+
+.google-map .gm-style .gm-ui-hover-effect {
+  height: 50px !important;
+  opacity: 0.3;
+  right: 20px !important;
+  top: 0 !important;
+  transform: none;
+  width: 50px !important;
+}
+
+.google-map .gm-style .gm-ui-hover-effect img {
+  height: 100% !important;
+  width: 100% !important;
+}
