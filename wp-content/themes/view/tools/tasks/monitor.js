@@ -1,19 +1,27 @@
 import { series, watch } from 'gulp';
 import { quit, reload } from './serve';
 import { theme, plugin } from '../utils/paths';
-import { scripts, images, globalStyles, chunkStyles, tailwindStyles, svgs, fonts, clean, sprite, templates, phpcs, phpcbf } from '../index';
+import { scripts, images, globalStyles, chunkStyles, svgs, fonts, sprite, templates, phpcs, phpcbf } from '../index';
 
 function monitor(cb) {
+  // Kill build tools on config edit
   watch(
     [
       'tools/**/*',
       'gulpfile.babel.js',
-      'postcss.config.js',
       'babel.config.js',
       'package.json',
     ],
     quit,
   );
+  // Handle font changes
+  watch(
+    [
+      'src/fonts/**/*',
+    ],
+    fonts,
+  );
+  // Handle PHP change tasks
   watch(
     [
       `${theme}/**/*.php`,
@@ -27,6 +35,7 @@ function monitor(cb) {
       reload,
     ),
   );
+  // Handle SVG's
   watch(
     [
       'src/**/*.svg',
@@ -37,6 +46,7 @@ function monitor(cb) {
       reload,
     ),
   );
+  // Handle JS files changes
   watch(
     [
       'src/**/*.js',
@@ -48,6 +58,7 @@ function monitor(cb) {
       reload,
     ),
   );
+  // Handle CSS files changes
   watch(
     [
       'src/**/*.scss',
@@ -56,11 +67,10 @@ function monitor(cb) {
     ],
     series(
       globalStyles,
-      // blockStyles,
-      tailwindStyles,
-      // adminStyles,
+      chunkStyles,
     ),
   );
+  // Handle Image changes
   watch(
     [
       'src/images/**/*',
@@ -70,6 +80,7 @@ function monitor(cb) {
       reload,
     ),
   );
+  // Handle twig changes
   watch(
     [
       'src/components/**/*',
