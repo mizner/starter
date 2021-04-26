@@ -1,7 +1,9 @@
 import { mode } from '../utils/env';
+import { parse } from 'path';
 import { paths, root } from '../utils/paths';
 import { server } from './serve';
 import { src, dest } from 'gulp';
+import { find } from 'globule';
 import noop from 'gulp-noop';
 import plumber from 'gulp-plumber';
 import pump from 'pump';
@@ -15,7 +17,10 @@ import sassGlob from 'gulp-sass-glob';
 import postcss from 'gulp-postcss';
 import autoprefixer from 'autoprefixer';
 import tailwindCSS from 'tailwindcss';
-import postCSSNoop from 'postcss-noop';
+
+const srcPaths = find([
+  `${paths.src.components}/**/*.scss`,
+]);
 
 const options = {
   tailwind: require(`${root}/tailwind.config.js`),
@@ -56,33 +61,17 @@ const options = {
   },
 };
 
-function tailwindStyles(cb) {
-  return pump([
-    src(`${paths.src.styles}/tailwind.css`),
-    plumber(),
-    'production' === mode ? noop() : sourcemaps.init(),
-    postcss([
-      tailwindCSS(options.tailwind),
-      autoprefixer(options.autoprefixer),
-    ]),
-    'production' === mode ? cleanCSS(options.cleanCSS) : noop(),
-    rename(options.rename),
-    'production' === mode ? noop() : sourcemaps.write(),
-    dest(paths.dist.styles),
-    server.stream(),
-  ], cb);
-}
-
 function globalStyles(cb) {
   return pump([
-    src([`${paths.src.styles}/*.scss`]),
+    src([
+      `${paths.src.components}/base.scss`
+    ]),
     plumber(),
     'production' === mode ? noop() : sourcemaps.init(),
     sassGlob(),
     sass(options.sass).on('error', sass.logError),
     postcss([
       tailwindCSS(),
-      // 'production' === mode ? purgeCSS(options.purgeCSS) : postCSSNoop(),
       autoprefixer(options.autoprefixer),
     ]),
     'production' === mode ? cleanCSS(options.cleanCSS) : noop(),
@@ -102,18 +91,15 @@ function chunkStyles(cb) {
     ]),
     plumber(),
     'production' === mode ? noop() : sourcemaps.init(),
-    inject(`
-      @import "../../styles/utils/**/*";
-    `),
     sassGlob(),
     sass(options.sass).on('error', sass.logError),
     postcss([
       tailwindCSS(options.tailwind),
       autoprefixer(options.autoprefixer),
     ]),
-    rename(options.rename),
+    'production' === mode ? cleanCSS(options.cleanCSS) : noop(),
     'production' === mode ? noop() : sourcemaps.write(),
-    dest(paths.dist.components),
+    dest((currentPath => currentPath._base.replace('/src/', '/dist/'))),
     server.stream(),
   ], cb);
 }
