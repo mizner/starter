@@ -61,5 +61,10 @@
         "./wp-content/themes/view",
         "./wp-content/plugins/customizations",
     ],
-    "intelephense.format.enable": false
+    "intelephense.format.enable": false,
+    /**
+    * Headwind
+    */
+    "headwind.runOnSave": true,
+    "headwind.prependCustomClasses": true,
 }
