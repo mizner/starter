@@ -26,12 +26,30 @@
     ]
   },
   "vendors": [
-    "pristinejs/dist/pristine.min.js",
-    "flickity/dist/flickity.min.css",
-    "flickity/dist/flickity.pkgd.min.js",
-    "flickity-fade/flickity-fade.css",
-    "flickity-fade/flickity-fade.js",
-    "lozad/dist/lozad.min.js"
+    {
+      "name": "pristine.js",
+      "path": "pristinejs/dist/pristine.min.js"
+    },
+    {
+      "name": "flickity.js",
+      "path": "flickity/dist/flickity.pkgd.min.js"
+    },
+    {
+      "name": "flickity.css",
+      "path": "flickity/dist/flickity.min.css"
+    },
+    {
+      "name": "flickity.fade.js",
+      "path": "flickity-fade/flickity-fade.js"
+    },
+    {
+      "name": "flickity.fade.css",
+      "path": "flickity-fade/flickity-fade.css"
+    },
+    {
+      "name": "lozad.js",
+      "path": "lozad/dist/lozad.min.js"
+    }
   ],
   "fontawesome-pro": [
     "brands/facebook-f",

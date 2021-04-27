@@ -3,11 +3,28 @@ import { src, dest } from 'gulp';
 import { config } from '../utils/env';
 import pump from 'pump';
 
+const srcPaths = config.vendors.map(item => `node_modules/${item.path}`);
+
+function matchSrcFile(currentPath) {
+  let filename = ''
+  config.vendors.forEach(vendor => {
+    if (vendor.path.includes(currentPath.basename)){
+      filename = `${paths.dist.base}/vendors/${vendor.name}`
+    }
+    else {
+      new Error('file not found in sources')
+      process.exit(0)
+    }
+
+  })
+  return filename;
+}
+
 function vendors(cb) {
   return pump(
     [
-      src(config.vendors.map(item => `node_modules/${item}`)),
-      dest(`${paths.dist.base}/vendors`),
+      src(srcPaths),
+      dest(matchSrcFile),
     ],
     cb,
   );
