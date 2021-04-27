@@ -16,15 +16,7 @@ const srcPaths = find([
   `${paths.src.components}/*.js`,
 ]);
 
-/**
- *
- * @param currentPath
- * @returns {string}
- * @note This is specifically to search in globbed paths to identify view modules, for some reason multiple
- *       webpack instances wasn't working. The result being something like taking 'views/blocks/hero/hero.js'
- *       and outputting to 'dist/view/hero/hero.js'
- */
-function filterToIdentifyViews(currentPath) {
+function matchSrcFile(currentPath) {
   const originalPath = parse(srcPaths.find(path => path.includes(currentPath.basename)));
 
   if (srcPaths.includes(`${originalPath.dir}/${originalPath.base}`)) {
@@ -43,7 +35,7 @@ function scripts(cb) {
       plumber(),
       named(),
       webpackStream(webpackConfig, webpack),
-      dest(filterToIdentifyViews),
+      dest(matchSrcFile),
     ],
     cb,
   );

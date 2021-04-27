@@ -11,13 +11,14 @@ function matchSrcFile(currentPath) {
     if (vendor.path.includes(currentPath.basename)){
       filename = `${paths.dist.base}/vendors/${vendor.name}`
     }
-    else {
-      new Error('file not found in sources')
-      process.exit(0)
-    }
-
   })
-  return filename;
+  if (filename !== '') {
+    return filename;
+  }
+  else {
+    new Error('file not found in sources')
+    process.exit(0)
+  }
 }
 
 function vendors(cb) {
