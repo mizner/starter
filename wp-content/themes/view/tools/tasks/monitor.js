@@ -54,15 +54,14 @@ function monitor(cb) {
     ],
     series(
       scripts,
-      tailwindStyles,
+      globalStyles, // just in case tailwind classes are used
       reload,
     ),
   );
   // Handle CSS files changes
   watch(
     [
-      'src/**/*.scss',
-      '!src/styles/utils/theme.scss',
+      'src/**/*.css',
       'tailwind.config.js',
     ],
     series(
@@ -83,12 +82,12 @@ function monitor(cb) {
   // Handle twig changes
   watch(
     [
-      'src/components/**/*',
+      'src/components/**/*.twig',
     ],
     series(
       templates,
-      chunkStyles,
-      tailwindStyles,
+      // globalStyles, // just in case tailwind classes are used
+      // chunkStyles,
       reload,
     ),
   );
