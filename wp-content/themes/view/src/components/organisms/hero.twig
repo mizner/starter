@@ -8,9 +8,6 @@
  * - type: The type for this region to determine media asset shown.
  * - image: The image for this region.
  * - video: The video for this region.
- *
- * @see _core/models/blocks/hero & _core/filters/blocks/hero
- *
  */
 #}
 
@@ -18,13 +15,13 @@
 {% from "atoms/button.twig" import button %}
 <section class="hero bg-dark">
 	<div class="hero__wrapper relative">
-		<div class="hero__asset absolute w-full h-full z-10 overflow-hidden inset-0">
-			<img class="w-full h-full object-cover" srcset="{{ image.srcset }}" src="{{ image.src }}" alt="{{ image.alt|e }}">
-			<div class="hero__overlay absolute w-full top-0 bottom-0 z-20"></div>
+		<div class="hero__asset absolute inset-0 z-10 w-full h-full overflow-hidden">
+			<img class="object-cover w-full h-full" srcset="{{ image.srcset }}" src="{{ image.src }}" alt="{{ image.alt|e }}">
+			<div class="hero__overlay absolute top-0 bottom-0 z-20 w-full"></div>
 		</div>
 		<div class="hero__content container relative z-30 flex items-end">
-			<div class="hero__content-inner mb-8 md:mb-32 mt-16 md:mt-64 text-light">
-				<h2 class="hero__heading text-primary uppercase tracking-tighter italic leading-none md:text-4xl font-bold">{{ heading|e('wp_kses_post') }}</h2>
+			<div class="hero__content-inner md:mb-32 md:mt-64 text-light mt-16 mb-8">
+				<h2 class="hero__heading text-primary md:text-4xl italic font-bold leading-none tracking-tighter uppercase">{{ heading|e('wp_kses_post') }}</h2>
 				<p class="hero__description font-semibold">{{ description|e('wp_kses_post') }}</p>
 				<div class="hero__actions">
 					{{ button_1 ? button(button_1.title, button_1.url, button_1.target) }}

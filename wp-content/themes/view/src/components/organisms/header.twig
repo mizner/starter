@@ -6,22 +6,22 @@
 				{% include "logo-regular.svg" %}
 			</a>
 		</div>
-		<div class="flex flex-wrap items-center justify-between header__menu">
-			<div class="hidden header-menu-desktop lg:block">
+		<div class="header__menu flex flex-wrap items-center justify-between">
+			<div class="header-menu-desktop lg:block hidden">
 				<nav id="navMain" class="nav-main" role="navigation" itemscope itemtype="http://schema.org/SiteNavigationElement">
 					{% include "molecules/menu.twig" with {'items': menus.header_primary.get_items} %}
 				</nav>
 			</div>
 			<div class="header-menu-mobile lg:hidden">
-				<button class="p-0 m-0 bg-transparent border-none nav-mobile-toggle text-light">
-					<svg class="w-8 h-8 icon">
+				<button class="nav-mobile-toggle">
+					<svg class="icon w-8 h-8">
 						<use xlink:href="#icon-bars"></use>
 					</svg>
 				</button>
-				<nav id="navMobile" class="fixed top-0 bottom-0 z-40 h-screen transition-all duration-700 ease-in-out nav-mobile bg-dark" role="navigation" itemscope itemtype="http://schema.org/SiteNavigationElement">
-					<div class="relative z-50 flex items-center justify-center h-full">
-						<button class="absolute top-0 right-0 p-4 m-0 bg-transparent border-none nav-mobile-toggle text-light transform-none ">
-							<svg class="w-8 h-8 icon">
+				<nav id="navMobile" class="nav-mobile" role="navigation" itemscope itemtype="http://schema.org/SiteNavigationElement">
+					<div class="relative">
+						<button class="nav-mobile-toggle">
+							<svg class="icon w-8 h-8">
 								<use xlink:href="#icon-times"></use>
 							</svg>
 						</button>

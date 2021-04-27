@@ -18,7 +18,7 @@
 		</head>
 	{% endblock %}
 	<body class="{{body_class}}" data-template="base.twig" data-scroll-enabled="true">
-		<div class="fixed top-0 bottom-0 z-30 w-full duration-1000 ease-in-out opacity-0 overlay bg-dark"></div>
+		<div class="overlay bg-dark fixed top-0 bottom-0 z-30 hidden w-full duration-1000 ease-in-out opacity-0"></div>
 		{% include "sprite.svg" %}
 		<a class="skip-link screen-reader-text" href="#content">
 			<span>{{ _e( 'Skip to content') }}</span>
