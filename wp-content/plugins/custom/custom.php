@@ -26,10 +26,11 @@ require_once PATH . 'lib/class-wpcs-autoloader.php';
 // Action Hook for this plugin to load after all other plugins have been loaded.
 add_action( 'plugins_loaded', __NAMESPACE__ . '\run' );
 function run() {
-
-	Admin_Notices\Dependencies::init();
+	if ( ! Admin_Notices\Dependencies::are_installed() ) {
+		return;
+	}
 	WP_Registrations\Nav_Menus::init();
-	// WP_Registrations\CPT_Staff::init();
+	WP_Registrations\CPT_Staff::init();
 	Timber_Config\Setup::init();
 	Timber_Config\Additions::init();
 	ACF_Field_Groups\Options_Page::init();
