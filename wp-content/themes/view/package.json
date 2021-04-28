@@ -14,7 +14,7 @@
     "not Opera > 0"
   ],
   "watch": {
-    "proxy": "https://portal.jed.test",
+    "proxy": "https://example.test",
     "port": 3333,
     "ui": false,
     "online": true
