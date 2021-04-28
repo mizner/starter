@@ -12,6 +12,13 @@ phpcs.log
 /.env
 /vendor
 
+## WP Engine specific files
+/_wpeprivate
+/.wpe-devkit
+/.wpe-pull-ignore
+/.wpe-push-ignore
+
+
 ## Flywheel specific files
 /fw-status-check.php
 /fw-flush-cache.php
