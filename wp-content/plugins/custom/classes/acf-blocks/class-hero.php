@@ -28,7 +28,7 @@ class Hero {
 		Timber::render( 'organisms/hero.twig', (array) get_fields() );
 	}
 	public function handle_enqueues() {
-		wp_enqueue_style( 'block-hero', get_stylesheet_directory_uri() . '/dist/components/hero.css', [], '1.0' );
+		// wp_enqueue_style( 'block-hero', get_stylesheet_directory_uri() . '/dist/components/hero.css', [], '1.0' );
 		// wp_enqueue_script( 'block-hero', get_stylesheet_directory_uri() . '/dist/components/hero.js', [ 'jquery' ], '1.0', true );
 	}
 }
