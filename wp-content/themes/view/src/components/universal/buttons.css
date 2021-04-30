@@ -1,7 +1,7 @@
-input[type='submit'],
+/* input[type='submit'],
 input[type='reset'],
 input[type='button'],
-button,
+button, */
 .button,
 .btn {
   @apply
@@ -20,15 +20,15 @@ button,
     border-primary
     text-md;
 
-  span {
+  & span {
     @apply inline-block;
   }
 
-  svg {
+  & svg {
     @apply fill-current;
   }
 
-  &:disabled {
+  & :disabled {
     @apply opacity-50;
   }
 

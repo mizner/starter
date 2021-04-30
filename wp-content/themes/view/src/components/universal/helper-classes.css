@@ -9,7 +9,7 @@
 .icon {
     @apply inline-block relative;
     & svg {
-        @apply h-full w-full;
+
     }
 }
 

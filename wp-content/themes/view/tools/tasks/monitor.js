@@ -54,7 +54,7 @@ function monitor(cb) {
     ],
     series(
       scripts,
-      globalStyles, // just in case tailwind classes are used
+      // globalStyles, // just in case tailwind classes are used
       reload,
     ),
   );
