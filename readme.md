@@ -30,6 +30,9 @@ This is the character set used for the base64 data uri `ABCDEFG​HIJKLMNOPQRSTU
 * [CSS Tricks Articles](https://css-tricks.com/the-best-font-loading-strategies-and-how-to-execute-them/#critical-foft-with-data-uris)
 * [Transfonter](https://transfonter.org/)
 
+### Working with JavaScript
+* Important: each time you add a new js file, you may have to stop and restart gulp
+* Each file is built with webpack, but gulp controls each webpack stream.
 ## Post Types
 * Posts
 * Pages
