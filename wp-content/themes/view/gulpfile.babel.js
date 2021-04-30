@@ -42,6 +42,9 @@ const prod = series(
 );
 
 export {
+  scripts,
+  globalStyles,
+  chunkStyles,
   build,
   start,
   prod

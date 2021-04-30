@@ -21,8 +21,7 @@
   },
   "babel": {
     "presets": [
-      "@babel/preset-env",
-      "@babel/preset-react"
+      "@babel/preset-env"
     ]
   },
   "vendors": [
@@ -91,7 +90,6 @@
   "devDependencies": {
     "@babel/core": "^7.12.17",
     "@babel/preset-env": "^7.12.17",
-    "@babel/preset-react": "^7.12.13",
     "@babel/register": "^7.12.13",
     "babel-loader": "^8.2.2",
     "browser-sync": "^2.26.14",
@@ -135,6 +133,8 @@
   "scripts": {
     "start": "NODE_ENV=development gulp start",
     "build": "NODE_ENV=development gulp build",
+    "styles": "NODE_ENV=development gulp globalStyles && gulp chuckStyles",
+    "scripts": "NODE_ENV=development gulp scripts",
     "prod": "NODE_ENV=production gulp prod",
     "lint": "NODE_ENV=development gulp lint",
     "stylelint": "stylelint 'src/**/*.scss' --fix; exit 0"
