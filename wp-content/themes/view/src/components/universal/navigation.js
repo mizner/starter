@@ -136,6 +136,7 @@ function handleFirstLevelModifications(menuItem) {
     const childMenuTitle = document.createElement('h5')
     const childMenuTitleText = document.createTextNode(menuItem.firstElementChild.innerText)
     childMenuTitle.appendChild(childMenuTitleText)
+    childMenuTitle.setAttribute('aria-hidden', 'true')
     childMenu.prepend(childMenuTitle)
 
     // Set default aria states
