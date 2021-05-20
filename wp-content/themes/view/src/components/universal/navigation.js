@@ -12,6 +12,7 @@ function handleSecondLevelTabKeydown(ev, menuItem) {
         return
     }
 
+    // Use defaults if child menu is expanded
     if (menuItem.querySelector('.menu-items-children').getAttribute('aria-expanded') === 'true') {
         return
     }
@@ -99,23 +100,30 @@ function handleFirstLevelTabKeydown(ev, menuItem) {
     return
 }
 
+function handleFirstLevelClickEvent(ev, menuItem, childMenu) {
+    if (!childMenu) {
+        return
+    }
+
+    if (childMenu.getAttribute('aria-expanded') === 'true') {
+        ev.preventDefault()
+        childMenu.setAttribute('aria-expanded', 'false')
+        return
+    }
+
+    ev.preventDefault()
+    firstLevel.forEach(menuItem =>
+        menuItem.querySelector('.menu-items-children').setAttribute('aria-expanded', 'false')
+    )
+    childMenu.setAttribute('aria-expanded', 'true')
+}
+
 function handleFirstLevelModifications(menuItem) {
     const link = menuItem.querySelector('a')
     const childMenu = menuItem.querySelector('.menu-items-children')
-
     childMenu.setAttribute('aria-expanded', 'false')
 
-    link.addEventListener('click', ev => {
-        if (!childMenu) {
-            return
-        }
-
-        ev.preventDefault()
-        firstLevel.forEach(menuItem =>
-            menuItem.querySelector('.menu-items-children').setAttribute('aria-expanded', 'false')
-        )
-        toggleAttribute(childMenu, 'aria-expanded')
-    })
+    link.addEventListener('click', ev => handleFirstLevelClickEvent(ev, menuItem, childMenu))
 
     link.addEventListener('keydown', ev => handleFirstLevelTabKeydown(ev, menuItem))
 }
