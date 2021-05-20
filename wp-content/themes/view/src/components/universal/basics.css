@@ -115,8 +115,3 @@ caption {
 ::selection {
   /* Code */
 }
-
-/* Aria */
-[aria-hidden="true"] {
-  @apply sr-only;
-}
