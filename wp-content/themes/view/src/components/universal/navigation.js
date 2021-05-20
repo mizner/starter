@@ -6,6 +6,16 @@ const toggle = document.querySelector('.nav-mobile-toggle')
 const firstLevel = [...document.querySelectorAll('.nav > .menu-items > li')]
 const secondLevel = [...document.querySelectorAll('.nav > .menu-items > li > ul > li')]
 
+function handleMobileToggle(toggleEl) {
+    const mobileMenu = document.querySelector('.nav-mobile')
+    const headerHeight = elementHeight(document.querySelector('.header'))
+    mobileMenu.style.top = `${headerHeight}px`
+
+    toggleEl.addEventListener('click', ev => {
+        toggleAttribute(mobileMenu, 'aria-hidden')
+    })
+}
+
 function handleSecondLevelTabKeydown(ev, menuItem) {
     // Skip if not tab keydown
     if (ev.keyCode !== 9) {
@@ -38,34 +48,6 @@ function handleSecondLevelTabKeydown(ev, menuItem) {
     ev.preventDefault()
     menuItem.nextElementSibling.firstElementChild.focus()
     return
-}
-
-function handleSecondLevelModifications(menuItem) {
-    const link = menuItem.querySelector('a')
-    const childMenu = menuItem.querySelector('.menu-items-children')
-    if (!childMenu) {
-        return
-    }
-    childMenu.setAttribute('aria-expanded', 'false')
-
-    // Create and insert button
-    const button = document.createElement('button')
-    button.appendChild(useSpriteIcon('plus'))
-    link.insertAdjacentElement('afterend', button)
-
-    button.addEventListener('click', ev => {
-        ev.preventDefault()
-        // Toggle aria
-        toggleAttribute(childMenu, 'aria-expanded')
-        // Remove any existing icon
-        button.lastElementChild.remove()
-        // Change Icon
-        childMenu.getAttribute('aria-expanded') === 'true'
-            ? button.appendChild(useSpriteIcon('minus'))
-            : button.appendChild(useSpriteIcon('plus'))
-    })
-
-    button.addEventListener('keydown', ev => handleSecondLevelTabKeydown(ev, menuItem))
 }
 
 function handleFirstLevelTabKeydown(ev, menuItem) {
@@ -118,6 +100,34 @@ function handleFirstLevelClickEvent(ev, menuItem, childMenu) {
     childMenu.setAttribute('aria-expanded', 'true')
 }
 
+function handleSecondLevelModifications(menuItem) {
+    const link = menuItem.querySelector('a')
+    const childMenu = menuItem.querySelector('.menu-items-children')
+    if (!childMenu) {
+        return
+    }
+    childMenu.setAttribute('aria-expanded', 'false')
+
+    // Create and insert button
+    const button = document.createElement('button')
+    button.appendChild(useSpriteIcon('plus'))
+    link.insertAdjacentElement('afterend', button)
+
+    button.addEventListener('click', ev => {
+        ev.preventDefault()
+        // Toggle aria
+        toggleAttribute(childMenu, 'aria-expanded')
+        // Remove any existing icon
+        button.lastElementChild.remove()
+        // Change Icon
+        childMenu.getAttribute('aria-expanded') === 'true'
+            ? button.appendChild(useSpriteIcon('minus'))
+            : button.appendChild(useSpriteIcon('plus'))
+    })
+
+    button.addEventListener('keydown', ev => handleSecondLevelTabKeydown(ev, menuItem))
+}
+
 function handleFirstLevelModifications(menuItem) {
     const link = menuItem.querySelector('a')
     const childMenu = menuItem.querySelector('.menu-items-children')
@@ -126,17 +136,6 @@ function handleFirstLevelModifications(menuItem) {
     link.addEventListener('click', ev => handleFirstLevelClickEvent(ev, menuItem, childMenu))
 
     link.addEventListener('keydown', ev => handleFirstLevelTabKeydown(ev, menuItem))
-}
-
-
-function handleMobileToggle(toggleEl) {
-    const mobileMenu = document.querySelector('.nav-mobile')
-    const headerHeight = elementHeight(document.querySelector('.header'))
-    mobileMenu.style.top = `${headerHeight}px`
-
-    toggleEl.addEventListener('click', ev => {
-        toggleAttribute(mobileMenu, 'aria-hidden')
-    })
 }
 
 export default function navigation(){
