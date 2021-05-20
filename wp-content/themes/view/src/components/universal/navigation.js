@@ -131,10 +131,17 @@ function handleSecondLevelModifications(menuItem) {
 function handleFirstLevelModifications(menuItem) {
     const link = menuItem.querySelector('a')
     const childMenu = menuItem.querySelector('.menu-items-children')
+
+    // Duplicate menu item title and prepend to top of child menu
+    const childMenuTitle = document.createElement('h5')
+    const childMenuTitleText = document.createTextNode(menuItem.firstElementChild.innerText)
+    childMenuTitle.appendChild(childMenuTitleText)
+    childMenu.prepend(childMenuTitle)
+
+    // Set default aria states
     childMenu.setAttribute('aria-expanded', 'false')
 
     link.addEventListener('click', ev => handleFirstLevelClickEvent(ev, menuItem, childMenu))
-
     link.addEventListener('keydown', ev => handleFirstLevelTabKeydown(ev, menuItem))
 }
 
