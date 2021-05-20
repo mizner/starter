@@ -1,14 +1,9 @@
 {% extends "base.twig" %}
 
 {% block content %}
-	<div class="container py-8">
+	<div class="page">
 		<article class="post-type-{{post.post_type}}" id="post-{{post.ID}}">
-			<section class="article-content">
-				<h1 class="article-h1">{{post.title}}</h1>
-				<div class="article-body">
-					{{post.content}}
-				</div>
-			</section>
+			{{ post.content }}
 		</article>
 	</div><!-- /content-wrapper -->
 {% endblock %}
