@@ -43,10 +43,6 @@ class Simplify_Edit_Screen_By_CPT {
 				display: none;
 			}
 
-			.edit-post-layout .interface-interface-skeleton__content {
-				background-color: white;
-			}
-
 			.block-editor-block-list__layout  {
 				display: none;
 			}
@@ -58,13 +54,11 @@ class Simplify_Edit_Screen_By_CPT {
 				flex-basis: initial;
 				flex: initial;
 			}
+
 			.edit-post-layout__metaboxes {
-				max-width: 840px;
-				margin-left: auto;
-				margin-right: auto;
-				width: 100%;
-				border: 1px solid #dddddd;
+				margin-top: 0px;
 			}
+
 			.edit-post-sidebar__panel-tabs {
 				display: none;
 			}

@@ -7,7 +7,6 @@ class Metabox_Changes {
 	public static function init() {
 		$class = new self();
 		add_filter( 'wpseo_metabox_prio', [ $class, 'change_position' ] );
-			// Custom styles to hide block editor items
 		add_action( 'admin_head', [ $class, 'admin_inline_styles' ] );
 	}
 

@@ -32,6 +32,7 @@ function run() {
 	}
 	WP_Registrations\Nav_Menus::init();
 	WP_Registrations\CPT_Staff::init();
+	WP_Customizations\Edit_Post_Changes::init();
 	Timber_Config\Setup::init();
 	Timber_Config\Additions::init();
 	ACF_Field_Groups\Options_Page::init();
