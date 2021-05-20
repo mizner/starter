@@ -15,8 +15,10 @@
  */
 
 use Timber\Timber;
+use Timber\Post;
 
-$context = Timber::context();
+$context     = Timber::context();
+$timber_post = new Post();
 
 if ( is_home() ) {
 	$templates[] = [
