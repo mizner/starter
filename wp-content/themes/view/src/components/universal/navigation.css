@@ -1,0 +1,22 @@
+.header-menu-desktop {
+    & .nav {
+        & > .menu-items {
+            @apply flex;
+        }
+
+        & > .menu-items > .menu-item > .menu-items-children {
+            @apply absolute bg-light z-20 border-1;
+        }
+    }
+}
+
+.menu-item a:focus {
+    background-color: pink !important;
+}
+
+.menu-items-children {
+    @apply sr-only;
+    &[aria-expanded="true"] {
+        @apply not-sr-only;
+    }
+}

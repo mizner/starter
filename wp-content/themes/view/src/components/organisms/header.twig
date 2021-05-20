@@ -1,11 +1,36 @@
 <header class="header" role="banner">
-	<section class="header__wrapper">
-		<div class="header__logo">
-			<a href="{{site.url}}" class="" rel="home">
-				<h1 class="screen-reader-text">{{site.name}}</h1>
-				{% include "logo-regular.svg" %}
-			</a>
+	<section class="container flex justify-between">
+		{% include "molecules/logo.twig" %}
+		{# Mobile Navigation #}
+		<div class="header-menu-mobile lg:hidden">
+			<button class="nav-mobile-toggle">
+				<svg class="icon w-8 h-8">
+					<use xlink:href="#icon-bars"></use>
+				</svg>
+			</button>
+			{# Note, top height is being set dynamically in navigation.js based on .header height #}
+			<nav id="navMobile"
+				class="nav nav-mobile bg-light fixed left-0 right-0"
+				aria-hidden="true"
+				role="navigation"
+				itemscope
+				itemtype="http://schema.org/SiteNavigationElement">
+				<div class="relative">
+					{% include "molecules/menu.twig" with {'items': menus.header_primary.get_items} %}
+				</div>
+			</nav>
 		</div>
-		{% include "organisms/header-navigation.twig" %}
+		{# Desktop Navigation #}
+		<div class="header-navigation lg:flex flex-wrap items-center justify-between hidden">
+			<div class="header-menu-desktop">
+				<nav id="navMain"
+					class="nav nav-desktop"
+					role="navigation"
+					itemscope
+					itemtype="http://schema.org/SiteNavigationElement">
+					{% include "molecules/menu.twig" with { items: menus.header_primary.get_items } %}
+				</nav>
+			</div>
+		</div>
 	</section>
 </header>

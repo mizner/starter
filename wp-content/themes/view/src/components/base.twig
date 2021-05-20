@@ -20,7 +20,7 @@
 	<body class="{{body_class}}" data-template="base.twig" data-scroll-enabled="true">
 		<div class="overlay bg-dark fixed top-0 bottom-0 z-30 hidden w-full duration-1000 ease-in-out opacity-0"></div>
 		{% include "sprite.svg" %}
-		<a class="skip-link screen-reader-text" href="#content">
+		<a class="skip-link focus:not-sr-only sr-only" href="#content">
 			<span>{{ _e( 'Skip to content') }}</span>
 		</a>
 		{% block header %}

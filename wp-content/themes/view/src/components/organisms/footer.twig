@@ -1,5 +1,5 @@
-<footer id="footer" class=" footer bg-dark text-white py-32">
-	<div class="container lg:flex justify-between">
+<footer id="footer" class=" footer bg-dark py-32 text-white">
+	<div class="lg:flex container justify-between">
 		<div class="footer__logo md:mt-4">
 			{% include "logo-white.svg" %}
 		</div>
@@ -29,10 +29,10 @@
 				</ul>
 			</div>
 			<div class="footer__secondary mt-8">
-				<h4 class="footer__heading">{{ __('SITEMAP', 'look') }}</h4>
+				<h4 class="footer__heading text-light">{{ __('SITEMAP', 'look') }}</h4>
 				{% include "molecules/menu.twig" with {'items': menus.footer_primary.get_items} %}
 			</div>
-			<div class="footer__tertiary mt-8">
+			<div class="footer__tertiary text-light mt-8">
 				<h4 class="footer__heading">{{ __('SOCIAL', 'look') }}</h4>
 				{% include "molecules/menu.twig" with {'items': menus.footer_secondary.get_items} %}
 			</div>

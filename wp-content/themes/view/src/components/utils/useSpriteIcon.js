@@ -1,3 +1,4 @@
+// Note, this inserts <use> elements and should pull from what is available via the sprite
 function useSpriteIcon(iconName) {
     const svg = document.createElementNS('http://www.w3.org/2000/svg', 'svg');
     const useEl = document.createElementNS('http://www.w3.org/2000/svg', 'use');
