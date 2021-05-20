@@ -14,7 +14,9 @@ const srcPaths = find([
   `${paths.src.components}/templates/*.js`,
   `${paths.src.components}/pages/*.js`,
   `${paths.src.components}/*.js`,
-]);
+], {
+  allowEmpty: true,
+});
 
 function matchSrcFile(currentPath) {
   const originalPath = parse(srcPaths.find(path => path.includes(currentPath.basename)));
