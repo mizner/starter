@@ -1,11 +1,11 @@
 {% from "atoms/button.twig" import button %}
 <article class="card-pricing pt-8 pb-4 {{ 2 == index ? 'active'}} active-hover__item relative z-10 xl:w-1/3">
 	<div class="flex-col h-full px-12 xl:flex">
-		<h3 class="mb-8 text-lg">{{ __(card.heading|e, 'look') }}</h3>
+		<h3 class="mb-8 text-lg">{{ __(card.heading|e, 'view') }}</h3>
 		<ul class="mb-8">
 			{% for item in card.list %}
 				<li class='flex justify-between mb-2 list-item text-md'>
-					<span>{{ __(item.text|e, 'look') }}</span>
+					<span>{{ __(item.text|e, 'view') }}</span>
 					<span class="list-item__icon list-item__icon--{{ item.color|e }} w-5 h-5 inline-block;">
 						<svg class="w-full h-full fill-current icon">
 							<use xlink:href='#icon-checkmark'></use>

@@ -5,7 +5,7 @@
 		</div>
 		<div class="footer__menus sm:flex justify-between w-full">
 			<div class="footer__address mt-8">
-				<h4 class="footer__heading">{{ __('ABOUT', 'look') }}</h4>
+				<h4 class="footer__heading">{{ __('ABOUT', 'view') }}</h4>
 				<ul>
 					<li class="menu-item">
 						<a href="#">{{ address.name|e }}</a>
@@ -29,11 +29,11 @@
 				</ul>
 			</div>
 			<div class="footer__secondary mt-8">
-				<h4 class="footer__heading text-light">{{ __('SITEMAP', 'look') }}</h4>
+				<h4 class="footer__heading text-light">{{ __('SITEMAP', 'view') }}</h4>
 				{% include "molecules/menu.twig" with {'items': menus.footer_primary.get_items} %}
 			</div>
 			<div class="footer__tertiary text-light mt-8">
-				<h4 class="footer__heading">{{ __('SOCIAL', 'look') }}</h4>
+				<h4 class="footer__heading">{{ __('SOCIAL', 'view') }}</h4>
 				{% include "molecules/menu.twig" with {'items': menus.footer_secondary.get_items} %}
 			</div>
 		</div>

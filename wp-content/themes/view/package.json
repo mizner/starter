@@ -14,7 +14,7 @@
     "not Opera > 0"
   ],
   "watch": {
-    "proxy": "https://example.test",
+    "proxy": "https://nackidscan.test/",
     "port": 3333,
     "ui": false,
     "online": true
