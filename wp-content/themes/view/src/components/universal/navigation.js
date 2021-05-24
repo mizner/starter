@@ -38,7 +38,7 @@ function handleSecondLevelTabKeydown(ev, menuItem) {
         menuItem.previousElementSibling.firstElementChild.focus()
         return
     }
-    // If last menu item, focus parent link
+    // If last menu item, focus parent sibling link
     if (!menuItem.nextElementSibling){
         ev.preventDefault()
         menuItem.parentElement.parentElement.nextElementSibling.firstElementChild.focus()
