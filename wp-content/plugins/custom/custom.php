@@ -35,8 +35,10 @@ function run() {
 	WP_Customizations\Edit_Post_Changes::init();
 	Timber_Config\Setup::init();
 	Timber_Config\Additions::init();
+	ACF_Config\Local_Json::init();
 	ACF_Field_Groups\Options_Page::init();
-	ACF_Format_Values\Format_Types::init();
+	ACF_Filters\Format_Types::init();
+	ACF_Filters\Filter_Values::init();
 	Timber_Add_Context\Everywhere::init();
 	Timber_Add_Context\Singles::init();
 	ACF_Blocks\Hero::init();
