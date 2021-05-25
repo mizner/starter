@@ -8,20 +8,15 @@
         "**/*.lock": false,
         "wp-content/themes/view/dist/**.*": true,
     },
+    // "editor.insertSpaces": true,
+    // "editor.tabSize": 9,
     "editor.tabCompletion": "on", // Enable Snippets
-    "editor.formatOnSaveTimeout": 2000,
-    "[php]": {
-        "editor.formatOnSave": true,
-    },
-    "[json]": {
-        "editor.formatOnSave": true,
-    },
-    "scss.validate": false, // Because of supporting tailwind
-    "[twig]": {
-        // "editor.formatOnSave": true,
-        "editor.snippetSuggestions": "top",
-    },
     "emmet.showSuggestionsAsSnippets": true,
+    /**
+    * Stylelint
+    */
+    "stylelint.configFile": "wp-content/themes/view/.stylelintrc",
+    "stylelint.syntax": "scss",
     /**
     * Composer - https://marketplace.visualstudio.com/items?itemName=ikappas.composer
     */
@@ -45,13 +40,6 @@
     */
     "search-node-modules.path": "./wp-content/themes/look/node_modules",
     /**
-    * Code Actions on Save
-    */
-    "editor.codeActionsOnSave": {
-        "source.fixAll.eslint": true,
-        "source.fixAll.stylelint": true
-    },
-    /**
     * ESLint
     */
     "eslint.options": {
@@ -67,4 +55,29 @@
     */
     "headwind.runOnSave": true,
     "headwind.prependCustomClasses": true,
+    /**
+    * Code Actions on Save
+    */
+    "editor.codeActionsOnSave": {
+        "source.fixAll.eslint": true,
+        "source.fixAll.stylelint": true,
+    },
+    /**
+    * Language specific settings
+    */
+    "[php]": {
+        "editor.formatOnSave": true,
+    },
+    "[js]": {
+
+    },
+    "[css]": {
+
+    },
+    "[json]": {
+        "editor.formatOnSave": true,
+    },
+    "[twig]": {
+        "editor.snippetSuggestions": "top",
+    },
 }

@@ -1,15 +1,22 @@
 {
   "defaultSeverity": "warning",
-  "extends": "stylelint-config-sass-guidelines",
+  "extends": "stylelint-config-recommended",
+  "plugins": [
+    "stylelint-order"
+  ],
   "rules": {
-    "scss/at-rule-no-unknown": [
+    "no-invalid-double-slash-comments": null,
+    "declaration-block-trailing-semicolon": null,
+    "no-descending-specificity": null,
+    "at-rule-no-unknown": [
       true,
       {
         "ignoreAtRules": [
+          "tailwind",
           "apply",
-          "screen",
           "variants",
-          "tailwind"
+          "responsive",
+          "screen"
         ]
       }
     ],

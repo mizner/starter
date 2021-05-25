@@ -10,6 +10,8 @@ import cleanCSS from 'gulp-clean-css';
 import sourcemaps from 'gulp-sourcemaps';
 import inject from 'gulp-header';
 import postcss from 'gulp-postcss';
+import postcssStripInlineComments from 'postcss-strip-inline-comments';
+import postcssSCSS from 'postcss-scss';
 import postcssPresetEnv from 'postcss-preset-env';
 import postcssImport from 'postcss-import';
 import postcssGlobImport from 'postcss-import-ext-glob';
@@ -33,6 +35,10 @@ const options = {
     grid: false, // autoplace,
     cascade: false,
   },
+  postcss: {
+    parser: postcssSCSS,
+    // syntax: 'postcss-scss',
+  },
   postcssPresetEnvOptions: {
     stage: 3,
     features: {
@@ -43,21 +49,30 @@ const options = {
 
 function globalStyles(cb) {
   return pump([
-    src([
-      `${paths.src.components}/base.css`
-    ]),
+    src(
+      'production' === mode
+      ? [`${paths.src.components}/base.css`]
+      : [`${paths.src.components}/base-dev.css`]
+    ),
     plumber(),
     'production' === mode ? noop() : sourcemaps.init(),
-    postcss([
-      postcssGlobImport(),
-      postcssImport(),
-    ]),
+    postcss(
+      [
+        postcssGlobImport(),
+        postcssImport(),
+      ],
+      options.postcss
+    ),
     inject(`@tailwind base; @tailwind components; @tailwind utilities; @tailwind screens;`),
-    postcss([
-      tailwindCSS(),
-      postcssPresetEnv(options.postcssPresetEnvOptions),
-      autoprefixer(options.autoprefixer),
-    ]),
+    postcss(
+      [
+        postcssStripInlineComments(),
+        tailwindCSS(),
+        postcssPresetEnv(options.postcssPresetEnvOptions),
+        autoprefixer(options.autoprefixer),
+      ],
+      options.postcss
+    ),
     'production' === mode ? cleanCSS(options.cleanCSS) : noop(),
     rename(options.rename),
     'production' === mode ? noop() : sourcemaps.write(),
@@ -75,13 +90,16 @@ function chunkStyles(cb) {
     ]),
     plumber(),
     'production' === mode ? noop() : sourcemaps.init(),
-    postcss([
-      postcssGlobImport(),
-      postcssImport(),
-      tailwindCSS(options.tailwind),
-      postcssPresetEnv(options.postcssPresetEnvOptions),
-      autoprefixer(options.autoprefixer),
-    ]),
+    postcss(
+      [
+        postcssGlobImport(),
+        postcssImport(),
+        tailwindCSS(options.tailwind),
+        postcssPresetEnv(options.postcssPresetEnvOptions),
+        autoprefixer(options.autoprefixer),
+      ],
+      options.postcss
+    ),
     'production' === mode ? cleanCSS(options.cleanCSS) : noop(),
     'production' === mode ? noop() : sourcemaps.write(),
     dest((currentPath => currentPath._base.replace('/src/', '/dist/'))),

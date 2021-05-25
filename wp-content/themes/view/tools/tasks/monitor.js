@@ -54,7 +54,6 @@ function monitor(cb) {
     ],
     series(
       scripts,
-      // globalStyles, // just in case tailwind classes are used
       reload,
     ),
   );
@@ -66,7 +65,6 @@ function monitor(cb) {
     ],
     series(
       globalStyles,
-      chunkStyles,
     ),
   );
   // Handle Image changes

@@ -27,18 +27,24 @@ function theme_enqueues() {
 			'dist/components',
 		]
 	);
-
-	Register_Directory_Enqueues::css(
-		[
-			'dist/vendors',
-			'dist/components/organisms',
-			'dist/components/templates',
-			'dist/components/pages',
-			'dist/components',
-		]
-	);
-
-	// Globally loaded enqueues
+	// Globally loaded scripts
 	wp_enqueue_script( 'base' );
-	wp_enqueue_style( 'base' );
+
+	if ( 'production' === wp_get_environment_type() ) {
+		Register_Directory_Enqueues::css(
+			[
+				'dist/vendors',
+				'dist/components/organisms',
+				'dist/components/templates',
+				'dist/components/pages',
+				'dist/components',
+			]
+		);
+		// Globally loaded styles
+		wp_enqueue_style( 'base' );
+	} else {
+		// Globally loaded styles
+		wp_enqueue_style( 'base-dev', get_stylesheet_directory_uri() . '/dist/components/base-dev.css', [], '1.0' );
+	}
+
 }

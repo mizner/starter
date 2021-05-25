@@ -50,6 +50,7 @@ function theme_supports() {
 	 * Block Editor supports
 	 */
 	add_theme_support( 'align-wide' );
+	// TODO: Update inline styles
 	add_editor_style( 'dist/styles/tailwind.css' );
 	add_editor_style( 'dist/styles/main.css' );
 }
