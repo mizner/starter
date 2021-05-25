@@ -36,6 +36,7 @@ function run() {
 	Timber_Config\Setup::init();
 	Timber_Config\Additions::init();
 	ACF_Config\Local_Json::init();
+	ACF_Config\Admin_Permissions::init();
 	ACF_Field_Groups\Options_Page::init();
 	ACF_Filters\Format_Types::init();
 	ACF_Filters\Filter_Values::init();
