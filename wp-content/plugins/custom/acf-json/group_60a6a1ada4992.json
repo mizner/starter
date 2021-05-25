@@ -1,0 +1,210 @@
+{
+    "key": "group_60a6a1ada4992",
+    "title": "Modules",
+    "fields": [
+        {
+            "key": "field_60a6a1b28b1c2",
+            "label": "Modules",
+            "name": "modules",
+            "type": "flexible_content",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "layouts": {
+                "layout_60a6a8c834a96": {
+                    "key": "layout_60a6a8c834a96",
+                    "name": "hero",
+                    "label": "Hero",
+                    "display": "row",
+                    "sub_fields": [
+                        {
+                            "key": "field_60abdd320966a",
+                            "label": "Hero",
+                            "name": "hero",
+                            "type": "clone",
+                            "instructions": "",
+                            "required": 0,
+                            "conditional_logic": 0,
+                            "wrapper": {
+                                "width": "",
+                                "class": "",
+                                "id": ""
+                            },
+                            "clone": [
+                                "group_60abda7c19493"
+                            ],
+                            "display": "seamless",
+                            "layout": "block",
+                            "prefix_label": 0,
+                            "prefix_name": 0
+                        }
+                    ],
+                    "min": "",
+                    "max": ""
+                },
+                "layout_60a6a9040ae80": {
+                    "key": "layout_60a6a9040ae80",
+                    "name": "cta",
+                    "label": "Call to action",
+                    "display": "row",
+                    "sub_fields": [
+                        {
+                            "key": "field_60a6a9040ae82",
+                            "label": "Call to action",
+                            "name": "content",
+                            "type": "clone",
+                            "instructions": "",
+                            "required": 0,
+                            "conditional_logic": 0,
+                            "wrapper": {
+                                "width": "",
+                                "class": "",
+                                "id": ""
+                            },
+                            "clone": [
+                                "group_60abda7c19493"
+                            ],
+                            "display": "seamless",
+                            "layout": "block",
+                            "prefix_label": 0,
+                            "prefix_name": 0
+                        }
+                    ],
+                    "min": "",
+                    "max": ""
+                },
+                "layout_60abd4a5c8311": {
+                    "key": "layout_60abd4a5c8311",
+                    "name": "posts",
+                    "label": "Posts",
+                    "display": "row",
+                    "sub_fields": [
+                        {
+                            "key": "field_60abd4adc8312",
+                            "label": "Posts",
+                            "name": "posts",
+                            "type": "clone",
+                            "instructions": "",
+                            "required": 0,
+                            "conditional_logic": 0,
+                            "wrapper": {
+                                "width": "",
+                                "class": "",
+                                "id": ""
+                            },
+                            "clone": [
+                                "group_60abd44e12bc3"
+                            ],
+                            "display": "seamless",
+                            "layout": "block",
+                            "prefix_label": 0,
+                            "prefix_name": 0
+                        }
+                    ],
+                    "min": "",
+                    "max": ""
+                },
+                "layout_60abd9112ac28": {
+                    "key": "layout_60abd9112ac28",
+                    "name": "accordion",
+                    "label": "Accordion",
+                    "display": "row",
+                    "sub_fields": [],
+                    "min": "",
+                    "max": ""
+                },
+                "layout_60abd9202ac29": {
+                    "key": "layout_60abd9202ac29",
+                    "name": "blurbs",
+                    "label": "Blurbs",
+                    "display": "row",
+                    "sub_fields": [],
+                    "min": "",
+                    "max": ""
+                },
+                "layout_60abd9582ac2a": {
+                    "key": "layout_60abd9582ac2a",
+                    "name": "banner",
+                    "label": "Banner",
+                    "display": "row",
+                    "sub_fields": [],
+                    "min": "",
+                    "max": ""
+                },
+                "layout_60abd95f2ac2b": {
+                    "key": "layout_60abd95f2ac2b",
+                    "name": "featurette",
+                    "label": "Featurette",
+                    "display": "row",
+                    "sub_fields": [],
+                    "min": "",
+                    "max": ""
+                },
+                "layout_60abd9abe51b3": {
+                    "key": "layout_60abd9abe51b3",
+                    "name": "tabs",
+                    "label": "Tabs",
+                    "display": "row",
+                    "sub_fields": [],
+                    "min": "",
+                    "max": ""
+                },
+                "layout_60abda07b92a7": {
+                    "key": "layout_60abda07b92a7",
+                    "name": "logos",
+                    "label": "Logos",
+                    "display": "row",
+                    "sub_fields": [],
+                    "min": "",
+                    "max": ""
+                },
+                "layout_60abda235afaf": {
+                    "key": "layout_60abda235afaf",
+                    "name": "testimonials",
+                    "label": "Testimonials",
+                    "display": "row",
+                    "sub_fields": [],
+                    "min": "",
+                    "max": ""
+                },
+                "layout_60abda44cda52": {
+                    "key": "layout_60abda44cda52",
+                    "name": "form",
+                    "label": "Form",
+                    "display": "row",
+                    "sub_fields": [],
+                    "min": "",
+                    "max": ""
+                }
+            },
+            "button_label": "Add Module",
+            "min": "",
+            "max": ""
+        }
+    ],
+    "location": [
+        [
+            {
+                "param": "post_type",
+                "operator": "==",
+                "value": "page"
+            }
+        ]
+    ],
+    "menu_order": 0,
+    "position": "normal",
+    "style": "default",
+    "label_placement": "top",
+    "instruction_placement": "label",
+    "hide_on_screen": [
+        "the_content"
+    ],
+    "active": true,
+    "description": "",
+    "modified": 1621876286
+}
