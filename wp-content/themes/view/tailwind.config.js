@@ -2,6 +2,7 @@ const isProduction = process.env.NODE_ENV === 'production'
 
 module.exports = {
   important: false,
+  mode: 'jit',
   purge: {
     content: [
       './src/**/*.twig',
