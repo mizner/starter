@@ -41,21 +41,6 @@
             "new_lines": ""
         },
         {
-            "key": "field_60abddc7c4abd",
-            "label": "Button",
-            "name": "button",
-            "type": "link",
-            "instructions": "",
-            "required": 0,
-            "conditional_logic": 0,
-            "wrapper": {
-                "width": "",
-                "class": "",
-                "id": ""
-            },
-            "return_format": "array"
-        },
-        {
             "key": "field_60ae9522673a0",
             "label": "Image",
             "name": "image",
@@ -78,6 +63,36 @@
             "max_height": "",
             "max_size": "",
             "mime_types": ""
+        },
+        {
+            "key": "field_60b2fd2b8f202",
+            "label": "First Button",
+            "name": "button_1",
+            "type": "link",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "return_format": "array"
+        },
+        {
+            "key": "field_60b2fd388f203",
+            "label": "Secondary Button",
+            "name": "button_2",
+            "type": "link",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "return_format": "array"
         }
     ],
     "location": [
@@ -97,5 +112,5 @@
     "hide_on_screen": "",
     "active": true,
     "description": "",
-    "modified": 1622132438
+    "modified": 1622343271
 }
