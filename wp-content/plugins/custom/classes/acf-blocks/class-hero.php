@@ -24,7 +24,6 @@ class Hero {
 
 
 	public function handle_render( $block, $content = '', $is_preview = false, $post_id = 0 ) {
-		// var_dump( $block, $content, $is_preview, $post_id );
 		Timber::render( 'organisms/hero.twig', (array) get_fields() );
 	}
 	public function handle_enqueues() {
