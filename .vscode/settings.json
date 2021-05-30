@@ -15,8 +15,9 @@
     /**
     * Stylelint
     */
-    "stylelint.configFile": "wp-content/themes/view/.stylelintrc",
+    // "stylelint.configFile": "wp-content/themes/view/.stylelintrc",
     "stylelint.syntax": "scss",
+    "stylelint.validate": ["css"],
     /**
     * Composer - https://marketplace.visualstudio.com/items?itemName=ikappas.composer
     */
@@ -38,17 +39,23 @@
     /**
     * Search Node modules vscode - https://marketplace.visualstudio.com/items?itemName=jasonnutter.search-node-modules
     */
-    "search-node-modules.path": "./wp-content/themes/look/node_modules",
+    "search-node-modules.path": "./wp-content/themes/view/node_modules",
     /**
     * ESLint
     */
-    "eslint.options": {
-        "configFile": "./.eslintrc"
-    },
-    "eslint.workingDirectories": [
-        "./wp-content/themes/view",
-        "./wp-content/plugins/customizations",
-    ],
+    // "eslint.format.enable": true,
+    // "eslint.options": {
+    //     "configFile": "./.eslintrc"
+    //     // "configFile": "wp-content/themes/view/.stylelintrc"
+    // },
+    // "eslint.workingDirectories": [{ "mode": "auto" }],
+    // "eslint.workingDirectories": [
+    //     "wp-content/themes/view",
+    //     "wp-content/plugins/custom",
+    // ],
+    /**
+    * Intelephense
+    */
     "intelephense.format.enable": false,
     /**
     * Headwind
@@ -59,7 +66,7 @@
     * Code Actions on Save
     */
     "editor.codeActionsOnSave": {
-        "source.fixAll.eslint": true,
+        // "source.fixAll.eslint": true,
         "source.fixAll.stylelint": true,
     },
     /**
@@ -69,10 +76,11 @@
         "editor.formatOnSave": true,
     },
     "[js]": {
-
+        "editor.formatOnSave": false,
+        // "source.fixAll.eslint": true,
     },
     "[css]": {
-
+        "editor.formatOnSave": false,
     },
     "[json]": {
         "editor.formatOnSave": true,
@@ -80,4 +88,5 @@
     "[twig]": {
         "editor.snippetSuggestions": "top",
     },
+    "eslint.format.enable": true,
 }
