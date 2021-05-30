@@ -20,7 +20,7 @@ class CPT_Staff {
 			return merge(
 				$array,
 				[
-					'title' => __( 'Our Portfolio', 'custom' ),
+					'title' => __( 'Staff', 'custom' ),
 				]
 			);
 		}
