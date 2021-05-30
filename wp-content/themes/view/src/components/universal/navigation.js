@@ -29,7 +29,7 @@ function handleSecondLevelTabKeydown(ev, menuItem) {
 
     if (ev.getModifierState("Shift")) {
         // If first menu item, use defaults
-        if (!menuItem.previousElementSibling){
+        if (!menuItem.previousElementSibling) {
             return
         }
 
@@ -39,7 +39,7 @@ function handleSecondLevelTabKeydown(ev, menuItem) {
         return
     }
     // If last menu item, focus parent sibling link
-    if (!menuItem.nextElementSibling){
+    if (!menuItem.nextElementSibling) {
         ev.preventDefault()
         menuItem.parentElement.parentElement.nextElementSibling.firstElementChild.focus()
         return
@@ -58,7 +58,7 @@ function handleFirstLevelTabKeydown(ev, menuItem) {
 
     if (ev.getModifierState("Shift")) {
         // If first menu item, allow default behavior
-        if (!menuItem.previousElementSibling){
+        if (!menuItem.previousElementSibling) {
             return
         }
 
@@ -72,7 +72,7 @@ function handleFirstLevelTabKeydown(ev, menuItem) {
     if (
         !menuItem.nextElementSibling
         || menuItem.querySelector('.menu-items-children').getAttribute('aria-expanded') === 'true'
-        ) {
+    ) {
         return
     }
 
@@ -146,7 +146,7 @@ function handleFirstLevelModifications(menuItem) {
     link.addEventListener('keydown', ev => handleFirstLevelTabKeydown(ev, menuItem))
 }
 
-export default function navigation(){
+export default function navigation() {
     handleMobileToggle(toggle)
     firstLevel.forEach(menuItem => handleFirstLevelModifications(menuItem))
     secondLevel.forEach(menuItem => handleSecondLevelModifications(menuItem))
