@@ -16,13 +16,13 @@
 }
 
 .slider .flickity-button .next {
-  & @screen lg {
+  @screen lg {
     right: 5rem;
   }
 }
 
 .slider .flickity-button .previous {
-  & @screen lg {
+  @screen lg {
      left: 5rem;
   }
 }
