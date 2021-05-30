@@ -115,6 +115,7 @@
     "postcss-import": "^14.0.1",
     "postcss-import-ext-glob": "^2.0.1",
     "postcss-noop": "^1.0.1",
+    "postcss-prefixwrap": "1.22.2",
     "postcss-preset-env": "^6.7.0",
     "postcss-scss": "^3.0.5",
     "postcss-strip-inline-comments": "^0.1.5",

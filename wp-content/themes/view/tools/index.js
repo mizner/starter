@@ -1,5 +1,5 @@
 export { scripts } from './tasks/scripts';
-export { globalStyles, chunkStyles } from './tasks/styles';
+export { globalStyles, chunkStyles, blockPreviewStyles } from './tasks/styles';
 export { fonts } from './tasks/fonts';
 export { templates } from './tasks/twig';
 export { phpcs, phpcbf } from './tasks/php';

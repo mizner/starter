@@ -15,6 +15,8 @@ import postcssSCSS from 'postcss-scss';
 import postcssPresetEnv from 'postcss-preset-env';
 import postcssImport from 'postcss-import';
 import postcssGlobImport from 'postcss-import-ext-glob';
+import postcssPrefixWrap from 'postcss-prefixwrap';
+import prefixCSS from 'gulp-prefix-css';
 import autoprefixer from 'autoprefixer';
 import tailwindCSS from 'tailwindcss';
 
@@ -47,6 +49,23 @@ const options = {
   }
 };
 
+function blockPreviewStyles(cb) {
+  return pump([
+    src(`${paths.dist.components}/base-dev.css`),
+    postcss([
+      postcssPrefixWrap('.block-previews', {
+        ignoredSelectors: [
+          // ":root",
+          // "#my-id",
+          //  /^\.some-(.+)$/
+        ],
+      }),
+    ]),
+    rename('block-previews.css'),
+    dest(paths.dist.styles),
+  ], cb);
+}
+
 function globalStyles(cb) {
   return pump([
     src(
@@ -76,6 +95,7 @@ function globalStyles(cb) {
     'production' === mode ? cleanCSS(options.cleanCSS) : noop(),
     rename(options.rename),
     'production' === mode ? noop() : sourcemaps.write(),
+    // prefixCSS('.block-editor-writing-flow'),
     dest((currentPath => currentPath._base.replace('/src/', '/dist/'))),
     server.stream(),
   ], cb);
@@ -110,4 +130,5 @@ function chunkStyles(cb) {
 export {
   globalStyles,
   chunkStyles,
+  blockPreviewStyles,
 };

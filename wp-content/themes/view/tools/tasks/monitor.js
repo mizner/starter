@@ -1,7 +1,7 @@
 import { series, watch } from 'gulp';
 import { quit, reload } from './serve';
 import { theme, plugin } from '../utils/paths';
-import { scripts, images, globalStyles, chunkStyles, svgs, fonts, sprite, templates, phpcs, phpcbf } from '../index';
+import { scripts, images, globalStyles, chunkStyles, blockPreviewStyles, svgs, fonts, sprite, templates, phpcs, phpcbf } from '../index';
 
 function monitor(cb) {
   // Kill build tools on config edit
@@ -87,6 +87,14 @@ function monitor(cb) {
       // globalStyles, // just in case tailwind classes are used
       // chunkStyles,
       reload,
+    ),
+  );
+  watch(
+    [
+      'dist/**/*.css',
+    ],
+    series(
+      blockPreviewStyles,
     ),
   );
   cb();
