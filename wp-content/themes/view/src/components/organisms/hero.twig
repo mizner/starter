@@ -13,18 +13,18 @@
 {{ add_style("hero") }}
 {% from "atoms/button.twig" import button %}
 <section class="hero bg-dark">
-	<div class="hero__wrapper relative">
-		<div class="hero__asset absolute inset-0 z-10 w-full h-full overflow-hidden">
+	<div class="hero-wrapper relative">
+		<div class="hero-asset absolute inset-0 z-10 w-full h-full overflow-hidden">
 			{% if image %}
 				<img class="object-cover w-full h-full" srcset="{{ image.srcset }}" src="{{ image.src }}" alt="{{ image.alt|e }}">
 			{% endif %}
-			<div class="hero__overlay absolute top-0 bottom-0 z-20 w-full"></div>
+			<div class="hero-overlay absolute top-0 bottom-0 z-20 w-full"></div>
 		</div>
-		<div class="hero__content container relative z-30 flex items-end">
-			<div class="hero__content-inner md:mb-32 md:mt-64 text-light mt-16 mb-8">
-				<h2 class="hero__heading text-primary md:text-4xl italic font-bold leading-none tracking-tighter uppercase">{{ heading|e('wp_kses_post') }}</h2>
-				<p class="hero__description font-semibold">{{ description|e('wp_kses_post') }}</p>
-				<div class="hero__actions">
+		<div class="hero-content container relative z-30 flex items-end">
+			<div class="hero-content-inner md:mb-32 md:mt-64 text-light mt-16 mb-8">
+				<h2 class="hero-heading text-primary md:text-4xl italic font-bold leading-none tracking-tighter uppercase">{{ heading|e('wp_kses_post') }}</h2>
+				<p class="hero-description font-semibold">{{ description|e('wp_kses_post') }}</p>
+				<div class="hero-actions">
 					{{ button_1 ? button(button_1.title, button_1.url, button_1.target) }}
 					{{ button_2 ? button(button_2.title, button_2.url, button_2.target, 'btn btn-tertiary') }}
 				</div>

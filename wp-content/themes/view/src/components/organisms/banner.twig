@@ -1,0 +1,15 @@
+<section class="banner {{ classes }}">
+	<div class="lg:flex md:py-40 container py-24">
+		<div class="banner__primary lg:mb-0 lg:w-1/2 mb-8">
+			<h2 class="banner__heading text-1xl md:text-2xl mt-4 italic">{{ heading }}</h2>
+		</div>
+		<div class="banner__secondary lg:w-1/2 lg:max-w-md">
+			<p class="banner__description text-md">{{ description }}</p>
+			{% if link %}
+				<a class="btn" href="{{ link.url }}" target="{{ link.target }}">
+					<span>{{ link.title }}</span>
+				</a>
+			{% endif %}
+		</div>
+	</div>
+</section>
