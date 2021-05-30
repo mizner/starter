@@ -3,7 +3,6 @@
 namespace Custom\Timber_Add_Context;
 
 use Timber;
-use Twig;
 
 class Everywhere {
 	public static function init() {
