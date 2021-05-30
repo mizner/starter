@@ -1,0 +1,10 @@
+<section class="tabs">
+	<div class="container">
+		{% for tab in tabs %}
+			<article>
+                <h1>{{ tab.heading }}</h1>
+                <p>{{ tab.description }}</p>
+			</article>
+		{% endfor %}
+	</div>
+</section>

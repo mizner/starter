@@ -1,0 +1,11 @@
+<section class="blurbs">
+	<div class="container">
+		{% for item in logos %}
+			<article>
+                {% if item.image %}
+					<img src="{{ item.image.src }}">
+				{% endif %}
+			</article>
+		{% endfor %}
+	</div>
+</section>
