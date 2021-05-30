@@ -16,7 +16,6 @@ import postcssPresetEnv from 'postcss-preset-env';
 import postcssImport from 'postcss-import';
 import postcssGlobImport from 'postcss-import-ext-glob';
 import postcssPrefixWrap from 'postcss-prefixwrap';
-import prefixCSS from 'gulp-prefix-css';
 import autoprefixer from 'autoprefixer';
 import tailwindCSS from 'tailwindcss';
 
