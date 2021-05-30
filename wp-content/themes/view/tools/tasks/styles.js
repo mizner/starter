@@ -51,8 +51,8 @@ function globalStyles(cb) {
   return pump([
     src(
       'production' === mode
-      ? [`${paths.src.components}/base.css`]
-      : [`${paths.src.components}/base-dev.css`]
+        ? [`${paths.src.components}/base.css`]
+        : [`${paths.src.components}/base-dev.css`]
     ),
     plumber(),
     'production' === mode ? noop() : sourcemaps.init(),
@@ -108,6 +108,6 @@ function chunkStyles(cb) {
 }
 
 export {
-    globalStyles,
-    chunkStyles,
+  globalStyles,
+  chunkStyles,
 };
