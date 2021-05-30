@@ -4,7 +4,9 @@
 	<div class="content-wrapper">
 		<div class="container">
 			<article class="post-type-{{ post.post_type }}" id="post-{{ post.ID }}">
-				<img src="{{ post.thumbnail.src|resize(1200, 300) }}">
+				{% if post.thumbnail %}
+					<img src="{{ post.thumbnail.src|resize(1200, 300) }}">
+				{% endif %}
 				<section class="article-content">
 					<h1 class="article-h1">{{ post.title }}</h1>
 					<a href="{{ post.link }}">{{ _e('edit') }}</a>
@@ -17,7 +19,7 @@
 						<time datetime="{{ post.date|date('Y-m-d H:i:s') }}">{{ post.date }}</time>
 					</p>
 					<div class="article-body">
-						{{post.content}}
+						{{ post.content }}
 					</div>
 				</section>
 
@@ -27,9 +29,7 @@
 					<!-- comments -->
 					<div class="comments">
 						{% if post.comments %}
-							<h3>
-								comments
-							</h3>
+							<h3>{{ __('Comments', 'view') }}</h3>
 							{% for cmt in post.comments %}
 								{% include "molecules/comment.twig" with {comment:cmt} %}
 							{% endfor %}
