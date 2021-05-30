@@ -1,9 +1,9 @@
 {
-    "key": "group_60abda7c19493",
-    "title": "Module: CTA",
+    "key": "group_60ae8ae7533f8",
+    "title": "Module: Featurette",
     "fields": [
         {
-            "key": "field_60abda81d66f8",
+            "key": "field_60ae8af5adbbf",
             "label": "Heading",
             "name": "heading",
             "type": "text",
@@ -22,7 +22,7 @@
             "maxlength": ""
         },
         {
-            "key": "field_60abda90d66f9",
+            "key": "field_60ae8af9adbc0",
             "label": "Description",
             "name": "description",
             "type": "textarea",
@@ -41,7 +41,31 @@
             "new_lines": ""
         },
         {
-            "key": "field_60abdaaad66fa",
+            "key": "field_60ae8b03adbc1",
+            "label": "Image",
+            "name": "image",
+            "type": "image",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "return_format": "array",
+            "preview_size": "medium",
+            "library": "all",
+            "min_width": "",
+            "min_height": "",
+            "min_size": "",
+            "max_width": "",
+            "max_height": "",
+            "max_size": "",
+            "mime_types": ""
+        },
+        {
+            "key": "field_60ae8b795bae8",
             "label": "Button",
             "name": "button",
             "type": "link",
@@ -73,5 +97,5 @@
     "hide_on_screen": "",
     "active": false,
     "description": "",
-    "modified": 1622054248
+    "modified": 1622051842
 }

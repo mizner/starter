@@ -1,9 +1,9 @@
 {
-    "key": "group_60abda7c19493",
-    "title": "Module: CTA",
+    "key": "group_60ae93690ec17",
+    "title": "Module: Form",
     "fields": [
         {
-            "key": "field_60abda81d66f8",
+            "key": "field_60ae936f7bbbd",
             "label": "Heading",
             "name": "heading",
             "type": "text",
@@ -22,7 +22,7 @@
             "maxlength": ""
         },
         {
-            "key": "field_60abda90d66f9",
+            "key": "field_60ae93797bbbe",
             "label": "Description",
             "name": "description",
             "type": "textarea",
@@ -41,10 +41,10 @@
             "new_lines": ""
         },
         {
-            "key": "field_60abdaaad66fa",
-            "label": "Button",
-            "name": "button",
-            "type": "link",
+            "key": "field_60ae93817bbbf",
+            "label": "Form",
+            "name": "gravity_form",
+            "type": "select",
             "instructions": "",
             "required": 0,
             "conditional_logic": 0,
@@ -53,7 +53,14 @@
                 "class": "",
                 "id": ""
             },
-            "return_format": "array"
+            "choices": [],
+            "default_value": false,
+            "allow_null": 0,
+            "multiple": 0,
+            "ui": 0,
+            "return_format": "value",
+            "ajax": 0,
+            "placeholder": ""
         }
     ],
     "location": [
@@ -73,5 +80,5 @@
     "hide_on_screen": "",
     "active": false,
     "description": "",
-    "modified": 1622054248
+    "modified": 1622054057
 }
