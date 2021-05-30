@@ -30,8 +30,10 @@ function run() {
 	if ( ! Admin_Notices\Dependencies::are_installed() ) {
 		return;
 	}
+	WP_Config\Allowed_Blocks::init();
 	WP_Registrations\Nav_Menus::init();
 	WP_Registrations\CPT_Staff::init();
+	WP_Registrations\CPT_Testimonial::init();
 	WP_Customizations\Edit_Post_Changes::init();
 	Timber_Config\Setup::init();
 	Timber_Config\Additions::init();
