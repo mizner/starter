@@ -12,12 +12,8 @@ class Append_Modules_To_Content {
 	}
 
 	public function append_modules( $content ) {
-
-		if ( is_admin() ) {
-			return;
-		}
 		if ( ! in_array( get_post_type(), [ 'page' ], true ) ) {
-			return;
+			return $content;
 		}
 
 		$post_id = get_the_ID();
