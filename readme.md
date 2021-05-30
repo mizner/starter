@@ -10,9 +10,14 @@
 Welcome to an opinionated MVC-ish Twig based WordPress build that balances ACF flexible content layouts.
 
 ### Requirements
-* PHP 7.3+
+* PHP 7.4+
 * Composer
 * WP CLI
+
+## Important Notes
+* The ACF "Custom Fields" menu will only appear when the constant WP_ENVIRONMENT_TYPE is set to 'local'
+    * More Information: https://developer.wordpress.org/reference/functions/wp_get_environment_type
+    * See `classes/acf-config/class-local-json.php` for settings
 
 ### Getting started
 Helpful info on getting a local development set up.
