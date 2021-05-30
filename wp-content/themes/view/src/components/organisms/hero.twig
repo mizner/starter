@@ -15,7 +15,9 @@
 <section class="hero bg-dark">
 	<div class="hero__wrapper relative">
 		<div class="hero__asset absolute inset-0 z-10 w-full h-full overflow-hidden">
-			<img class="object-cover w-full h-full" srcset="{{ image.srcset }}" src="{{ image.src }}" alt="{{ image.alt|e }}">
+			{% if image %}
+				<img class="object-cover w-full h-full" srcset="{{ image.srcset }}" src="{{ image.src }}" alt="{{ image.alt|e }}">
+			{% endif %}
 			<div class="hero__overlay absolute top-0 bottom-0 z-20 w-full"></div>
 		</div>
 		<div class="hero__content container relative z-30 flex items-end">
