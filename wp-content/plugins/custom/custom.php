@@ -39,13 +39,13 @@ function run() {
 	Timber_Config\Additions::init();
 	ACF_Config\Local_Json::init();
 	ACF_Config\Admin_Permissions::init();
+	ACF_Compatibility\Block_Editor_Customizations::init();
+	ACF_Compatibility\Append_Modules_To_Content::init();
 	ACF_Field_Groups\Options_Page::init();
 	ACF_Filters\Format_Types::init();
 	ACF_Filters\Filter_Values::init();
 	Timber_Add_Context\Everywhere::init();
 	Timber_Add_Context\Singles::init();
 	ACF_Blocks\Hero::init();
-	ACF_Compatibility\Simplify_Edit_Screen_By_CPT::init();
-	ACF_Compatibility\Append_Modules_To_Content::init();
 	Yoast_Compatibility\Metabox_Changes::init();
 };
