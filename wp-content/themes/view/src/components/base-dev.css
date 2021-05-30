@@ -1,3 +1,6 @@
+/**
+* This file is used both for easy css reloads during development and for block preview styles
+*/
 @import-glob
   "universal/**/*.css",
   "utils/**/*.css",
